@@ -1,0 +1,8 @@
+@charset = "UTF-8";
+
+pre{
+	padding : 10px 20px;
+	background : #FFD700;
+	border-top : 2px solid blue;
+	border-bottem : 5px double blue;
+}

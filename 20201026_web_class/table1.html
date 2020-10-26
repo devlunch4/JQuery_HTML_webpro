@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+table {
+	border: 10px outset blue;
+	border-collapse: collapse;
+	margin: 20px;
+	text-align: center;
+}
+
+td, th {
+	width: 150px;
+	height: 50px;
+}
+
+td {
+	text-align: center;
+}
+
+th {
+	background: lightblue;
+}
+
+#first {
+	border: 10px outset blue;
+	border-collapse: collapse;
+	margin: 20px;
+}
+
+#second {
+	border: 5px solid red;
+	border-collapse: separate;
+	margin: 20px;
+	}
+
+#second th {
+	background: lightgreen;	
+}
+#second caption {
+	background: yellow;
+	font-size: 2.0em;
+	caption-side: bottom;
+}
+</style>
+</head>
+<body>
+<pre>
+table : 표 형태의 데이터를 표현
+	속성 : border = "1""
+tr : row, 한줄
+td : 데이터, 한칸
+th : 데이터의 제목
+caption : 테이블의 제목
+
+여러개의 table 의 스타이을 각각 다르게 지정하기 위해서 id를 부여
+table th : table의 후손 th을 선택
+table > tr : table의 자식 tr을 선택
+</pre>
+	<table id="first" border="1">
+	<caption>VIP 리스트</caption>
+		<tr>
+			<th>이름</th>
+			<th>주소</th>
+			<th>전화번호</th>
+		</tr>
+		<tr>
+			<td>학생1</td>
+			<td>괌</td>
+			<td>010-1234-1234</td>
+		</tr>
+		<tr>
+			<td>학생2</td>
+			<td>하와이</td>
+			<td>010-1234-1234</td>
+		</tr>
+		<tr>
+			<td>학생3</td>
+			<td>뉴욕</td>
+			<td>010-1234-1234</td>
+		</tr>
+	</table>
+
+	<table id="second" border="1">
+	<caption>고객 리스트</caption>
+		<tr>
+			<th>이름</th>
+			<th>주소</th>
+			<th>전화번호</th>
+		</tr>
+		<tr>
+			<td>학생1</td>
+			<td>괌</td>
+			<td>010-1234-1234</td>
+		</tr>
+		<tr>
+			<td>학생2</td>
+			<td>하와이</td>
+			<td>010-1234-1234</td>
+		</tr>
+		<tr>
+			<td>학생3</td>
+			<td>뉴욕</td>
+			<td>010-1234-1234</td>
+		</tr>
+	</table>
+</body>
+</html>

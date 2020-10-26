@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	margin: 20px;
+}
+
+#first {
+	border: 5px solid blue;
+}
+
+#first {
+	width: 150px;
+	height: 40px;
+}
+
+#third td {
+	height: 20px;
+	border: 5px solid red;
+	text-align: center;
+}
+
+#tr3 {
+	width: 300px;
+}
+</style>
+
+
+</head>
+<body>
+	<table id="first" border="1">
+		<tr>
+			<td colspan="2">1</td>
+			<td colspan="2">2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+
+		<tr>
+			<td colspan="4">1</td>
+			<td colspan="2">2</td>
+		</tr>
+
+		<tr>
+			<td colspan="4">1</td>
+			<td colspan="2" rowspan="2">2</td>
+		</tr>
+
+		<tr>
+			<td colspan="4">1</td>
+		</tr>
+	</table>
+
+
+	<table id="second" border="1">
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+	</table>
+
+	<table id="third" border="1">
+		<tr>
+			<td colspan="5">제목1</td>
+		</tr>
+
+		<tr>
+			<td>소제목1</td>
+			<td>소제목2</td>
+			<td id="tr3">소제목3</td>
+			<td>소제목4</td>
+			<td>소제목5</td>
+		</tr>
+
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td id="tr3">소제목3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td id="tr3">소제목3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+	</table>
+</body>
+</html>

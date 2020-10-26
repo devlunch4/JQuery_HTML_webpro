@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+iframe {
+	width: 100%;
+	height: 500px;
+}
+
+h2 {
+	border: 1px solid blue;
+	width: 500px;
+	height: 80px;
+	padding: 10px;
+	text-align: center;
+	margin-top: 40px;
+}
+
+span {
+	border: 1px solid;
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	margin-top: 20px;
+}
+
+a {
+	border: 2px solid green; //
+	display: inline-block; //
+	width: 200px; //
+	height: 100px;
+	margin-left: 20px;
+}
+</style>
+<!-- display : block, inline, none, inline-block; -->
+</head>
+<body>
+	<pre>
+ifram : html파일 안에 html파일을 포함시킨다
+&lt;iframe name="ff" src="myhome.html"&gt;
+
+iframe name의 값을 a 링크의 target 속성으로 지정한다.
+&lt;a href="아메리카노.html" target="ff"&gt;아메리카노&lt;/a&gt;
+</pre>
+
+	<pre>&lt;h2>&lt;span>커피메뉴&lt;/span>&lt;/h2>
+	span 태그는 inline 요소로 가로세로 크기가 조절 되지 않는다
+	크기를 조절하기 위해서 display: inline-block; 스타일을 지정한다 
+	span {
+	border: 1px solid;
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	margin-top: 20px;
+}
+	</pre>
+	<h2>
+		<span>커피메뉴</span>
+	</h2>
+	<a href="americano.html" target="ff">아메리카노</a>
+	<a href="latte.html" target="ff">카페라떼</a>
+	<a href="cappuccino.html" target="ff">카푸치노</a>
+	<br>
+	<br>
+	<iframe name="ff" src="myhome.html"></iframe>
+</body>
+</html>

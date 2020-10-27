@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+//함수 추가
+function calc(){
+	var a = document.ff.price.value;
+	var b = document.ff.qty.value;
+	
+	var c = a * b;
+	alert(c + "원 입니다.");
+}
+</script>
+
+</head>
+<body>
+	<pre>
+input type="button" 요소는 자체 기능이 없다.
+기능을 부여하기 위해서 script를 이용한다
+</pre>
+
+	<form name="ff" action="script.jsp" method="post">
+		<!-- 물품 가격 입력  -->
+		물품가격 : <input type="text" name="price"> <br>
+		<!-- 수량 입력  -->
+		수량 : <input type="text" name="qty"> <br>
+		<!-- 버튼 생성 hello 출력 -->
+		<input type="button" value="확인" onclick="alert('hello1')">
+		<!-- 버튼 생성 함수 호출 -->
+		<input type="button" value="확인calc" onclick="calc()">
+		<!-- 승인 생성 및 함수 호출 -->
+		<input type="submit" value="전송" onclick="">
+	</form>
+</body>
+</html>

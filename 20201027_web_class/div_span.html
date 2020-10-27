@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+img {
+	width: 90%;
+	height: auto;
+}
+
+div.cdiv { /* 바깥쪽 div */
+	border: 1px solid blue;
+	width: 95%;
+	height: 300px;
+	padding-left: 20px;
+	margin-bottom: 1%;
+}
+
+.indiv { /* 안쪽 div 2개 */
+	box-sizing: border-box;
+	float: left;
+	border: 1px dotted pink;
+	height: 200px;
+	width: calc(65% - 2%);
+	margin: 10px;
+	overflow: auto;
+	padding: 0.5%;
+}
+
+.in1 { /* 안쪽 div중 첫번째 이미지가 있는 div */
+	width: calc(25% - 1%);
+	box-sizing: border-box;
+}
+
+h2 {
+	text-align: center;
+}
+
+span {
+	background: orange;
+	/*	display: inline-block;
+	width: 100px;
+	height: 40px;*/
+}
+
+sup {
+	background: blue;
+	color: red;
+}
+</style>
+</head>
+<body>
+	<div class="cdiv">
+		<h2>사자</h2>
+		<div class="indiv in1">
+			<img src="../images/사자.jpg">
+		</div>
+		<div class="indiv">
+			사자는 아프리카에 살며 강한 다리와 턱, <span>긴 송곳니</span>를 지니고 있다. 북아프리카와 중동, 서아시아,
+			유럽, 아라비아에서도 과거엔 서식했었으나 유럽 지역에서는 기원전부터 씨가 말랐고, 인도를 제외한 아시아 지역에서도
+			19~20세기부터 하나둘씩 사라져갔다[13]. 북아프리카에서도 1920년 모로코에서 사살되어 이 지역들의 야생 사자는 멸종된
+			상태이다. 지금은 대부분이 남아프리카 사바나 일대에 서식하고 있고, 남서아프리카의 나미비아 사막[14]에 밀렵으로 멸종된 줄
+			알았던 사막 사자가 살아남아 있으며 사헬 지대에도 일부 살아남아 있다. 인도의 기르숲이란 곳에도 사자가 약간 남아있기는
+			하다. 현재도 개체수가 계속 감소 중인 사자기에, 나중엔 일부 보호구역에서 소수만이 남을것이다. 간지나는 비주얼과 강인한
+			사냥 능력으로 오랫동안 <span>'백수의 왕'</span>으로 불리우며 <sup>왕의 상징</sup>으로 여겨지는 등
+			인기를 누려온 동물이다. 동양권에서도 호랑이와 쌍벽으로 여겨지지만 호랑이와 달리 또한 모든 동물들 중에서 유독
+			사자(獅子)에게만 공자(孔子), 맹자(孟子)처럼 자(子)를 붙이는 걸 보면 사자의 위상을 알 수 있다.
+		</div>
+	</div>
+
+	<div class="cdiv">
+		<h2>호랑이</h2>
+		<div class="indiv in1">
+			<img src="../images/호랑이.jpg">
+		</div>
+		<div class="indiv">
+			사자는 아프리카에 살며 강한 다리와 턱, <span>긴 송곳니</span>를 지니고 있다. 북아프리카와 중동, 서아시아,
+			유럽, 아라비아에서도 과거엔 서식했었으나 유럽 지역에서는 기원전부터 씨가 말랐고, 인도를 제외한 아시아 지역에서도
+			19~20세기부터 하나둘씩 사라져갔다[13]. 북아프리카에서도 1920년 모로코에서 사살되어 이 지역들의 야생 사자는 멸종된
+			상태이다. 지금은 대부분이 남아프리카 사바나 일대에 서식하고 있고, 남서아프리카의 나미비아 사막[14]에 밀렵으로 멸종된 줄
+			알았던 사막 사자가 살아남아 있으며 사헬 지대에도 일부 살아남아 있다. 인도의 기르숲이란 곳에도 사자가 약간 남아있기는
+			하다. 현재도 개체수가 계속 감소 중인 사자기에, 나중엔 일부 보호구역에서 소수만이 남을것이다. 간지나는 비주얼과 강인한
+			사냥 능력으로 오랫동안 <span>'백수의 왕'</span>으로 불리우며 <sup>왕의 상징</sup>으로 여겨지는 등
+			인기를 누려온 동물이다. 동양권에서도 호랑이와 쌍벽으로 여겨지지만 호랑이와 달리 또한 모든 동물들 중에서 유독
+			사자(獅子)에게만 공자(孔子), 맹자(孟子)처럼 자(子)를 붙이는 걸 보면 사자의 위상을 알 수 있다.
+		</div>
+	</div>
+</body>
+</html>

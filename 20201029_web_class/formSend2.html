@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+label {
+	display: inline-block;
+	width: 120px;
+	height: 30px;
+}
+
+form {
+	border: 1px solid blue;
+	padding: 10px;
+	width: 60%;
+	margin-top: 10%;
+	margin-left: 10%
+}
+</style>
+</head>
+<body>
+	<pre>
+&lt;input type="hidden" name="name" value="히든값"> &lt;input>
+화면에서 보이지 않지만 서버로 데이타를 전송한다.
+
+&lt;input type="image" src="../images/check.png">
+전송 submit을 수행한다.
+
+</pre>
+
+
+	<form action="send.jsp" method="post">
+		<label>아이디 :</label><input type="text" name="id" value="초기값"><br>
+		<label>비밀번호 :</label><input type="password" name="pass"><br>
+		<label>생일 :</label><input type="date" name="bir"><br> 
+		<label>좋아하는 과일 :</label><input type="checkbox" name="fruit" value="사과">사과 <input
+			type="checkbox" name="fruit" value="참외">참외 <input
+			type="checkbox" name="fruit" value="복숭아">복숭아 <input
+			type="checkbox" name="fruit" value="수박">수박 <input
+			type="checkbox" name="fruit" value="메론">메론 <input
+			type="checkbox" name="fruit" value="바나나">바나나 <input
+			type="checkbox" name="fruit" value="딸기">딸기 <br>
+		
+		<!-- 인풋 타입 : 라디오/히든 -->
+		<label>성별 :</label><input type="radio" name="gender" value="남자">남자
+		<input type="radio" name="gender" value="여자">여자<br>
+		
+		<!-- 파일 추가	-->
+		<label>파일 :</label><input type="file" name="file"><br>
+
+
+		<!-- 인풋 타입 : 라디오 히든 ==> value 값이 필요하다.-->
+		<input type="hidden" name="name" value="히든값">
+		<input type="submit"> <input type="reset">
+		<input type="image" src="../images/check.png">
+	</form>
+</body>
+</html>

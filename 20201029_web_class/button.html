@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+select {
+	width: 150px;
+}
+
+div {
+	border: 1px dotted orange;
+	padding: 10px;
+}
+</style>
+<script type="text/javascript">
+	//스크립트에서의 함수 //스크립트 내에서 함수를 안쓴다.
+	//변수 선언엔 var
+
+	function proc01() {
+		var name = ff.name.value;
+		var area = ff.area.value;
+
+		// '//g' 에서 '//' 내부의 값을 전역에서 검색해서 변경
+		area = area.replace(/\r/g, "<br>").replace(/\n/g,"<br>");
+		//ECMAScript
+		//표준 넘버 - es2,es4,es6(2016),es8
+
+		//alert("이름 : " + name + "\n\n" + "내용 :\n" + area);
+
+		
+		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		sel = ff.fruit.optoins.length;
+		//sel = ff.fruit.selected;
+		for (var i = 0; i < sel; i++) {
+		
+			res += sel[i].fruit.value + "   ";
+		}
+						
+		alert(res);
+		
+		
+		res2 = "<h1>실행결과</h1>";
+		res2 += "이름 : " + name + "<br>";
+		res2 += "내용 : <br>" + area + "<br>";
+
+		//string에 html이 포함되어있으면 innerHTML을 활용
+		//document.querySelector('#result1').innerHTML = res2;
+		
+		//그대로 문자(string)를 출력하고 싶다면 textContent를 출력 
+		document.querySelector('#result1').textContent = res2;
+	}
+</script>
+</head>
+<body>
+
+	<pre>
+*여러줄 입력 : &lt;textarea>&lt;/textarea>
+
+*기능이 없다. onclick=""에 의해서 기능을 부여
+&lt;button type="button">확인&lt;/button>
+&lt;button type="button" onclick="">확인&lt;/button>
+
+*전송 기능을 수행		
+&lt;button>전송&lt;/button>
+&lt;button type="submit">전송&lt;/button>
+
+select 요소의 선택한 값 전달
+jsp : request.getParameterValues("fruit");
+script : 요소에 접근하여 표현 > ff.fruit.value
+
+
+
+</pre>
+	<form name="ff" action="buttonsend.jsp" method="post">
+		이름<input name="name" value="초기값"><br>남기고 싶은 말<br>
+		<textarea name="area" rows="10" cols="60"></textarea>
+		<br>좋아하는 과일<br> <select name="fruit" multiple="multiple"
+			size="6">
+			<option value="사과">사과</option>
+			<option value="복숭아">바나나</option>
+			<option value="참외">참외</option>
+			<option value="사과">사과</option>
+			<option value="수박">수박</option>
+			<option value="오렌지">오렌지</option>
+		</select> <br>
+		<!-- 일반 버튼의 버튼타입은 아무기능이 없다. 이에 따라 onclick을 넣어준다. -->
+		<button type="button" onclick="proc01()">확인</button>
+		<button type="submit">전송</button>
+		<button type="reset">취소</button>
+		<button>전송</button>
+	</form>
+
+
+	<!-- 설명 -->
+	<br>
+	<br>!!확인버튼 클릭시 proc01() 메소드 호출되어 실행 결과 출력
+	<br>script에서 div에 접근하기위해서
+	<br>*과거 버전 (실행 속도면 좋음)
+	<br>document.getElementById("result")
+	<br>document.getElementsByTagName("div")
+	<br>*현재 버전 (사용 편의성 좋음)
+	<!-- id로 접근 -->
+	<br>document.querySelector("#result")
+	<!-- 객체로 접근 -->
+	<br>document.querySelector("div")
+	<br>*접근 요소에 출력 - innerHTML / textContent
+	<br>일반적으로 innerHTML
+	<div id="result1"></div>
+</body>
+</html>

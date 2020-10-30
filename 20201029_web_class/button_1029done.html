@@ -19,50 +19,39 @@ div {
 	//변수 선언엔 var
 
 	function proc01() {
-		var name = document.ff.name.value;
-		var area = document.ff.area.value;
+		var name = ff.name.value;
+		var area = ff.area.value;
 
 		// '//g' 에서 '//' 내부의 값을 전역에서 검색해서 변경
-		area = area.replace(/\r/g, "").replace(/\n/g, "<br>");
+		area = area.replace(/\r/g, "<br>").replace(/\n/g,"<br>");
 		//ECMAScript
 		//표준 넘버 - es2,es4,es6(2016),es8
 
-		//alert("이름 : " + name + "\n\n" + "내용 :\n" + area);
+		alert("이름 : " + name + "\n\n" + "내용 :\n" + area);
 
-		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-		sel = document.ff.fruit.options.length;
-
-		var res = "<h1>실행결과</h1>";
-		res += "이름 : " + name + "<br>";
-		res += "내용 : <br>" + area + "<br>";
-		res += "좋아하는 과일: <br>";
-
+		
+		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		sel = ff.fruit.optoins.length;
 		//sel = ff.fruit.selected;
 		for (var i = 0; i < sel; i++) {
-			if (document.ff.fruit.options[i].selected) {
-				res += document.ff.fruit.options[i].value + " ";
-			}
+		
+			res2 += sel[i].fruit.value + "   ";
 		}
-
-		//alert(res);
-
-		//res = "<h1>실행결과</h1>";
-		//res += "이름 : " + name + "<br>";
-		//res += "내용 : <br>" + area + "<br>";
+						
+		alert(res2);
+		
+		
+		res2 = "<h1>실행결과</h1>";
+		res2 += "이름 : " + name + "<br>";
+		res2 += "내용 : <br>" + area + "<br>";
 
 		//string에 html이 포함되어있으면 innerHTML을 활용
-		document.querySelector('#result').innerHTML = res;
-
+		document.querySelector('#result1').innerHTML = res2;
+		
 		//그대로 문자(string)를 출력하고 싶다면 textContent를 출력 
-		//document.querySelector('#result').textContent = res;
-	}
-
-	function proc02() {
-		document.ff.submit(); // jsp 실행
+		document.querySelector('#result1').textContent = res2;
 	}
 </script>
-
 </head>
 <body>
 
@@ -78,40 +67,29 @@ div {
 &lt;button type="submit">전송&lt;/button>
 
 select 요소의 선택한 값 전달
-jsp : String sel[] = request.getParameterValues("fruit");
+jsp : request.getParameterValues("fruit");
 script : 요소에 접근하여 표현 > ff.fruit.value
-		documet.ff.fruit.options[i].value
-</pre>
 
+
+
+</pre>
 	<form name="ff" action="buttonsend.jsp" method="post">
-		이름<input name="name" value="초기값"><br>
-		<!--  -->
-		남기고 싶은 말<br>
+		이름<input name="name" value="초기값"><br>남기고 싶은 말<br>
 		<textarea name="area" rows="10" cols="60"></textarea>
 		<br>좋아하는 과일<br> <select name="fruit" multiple="multiple"
 			size="6">
 			<option value="사과">사과</option>
-			<option value="복숭아" selected>복숭아</option>
+			<option value="복숭아">바나나</option>
 			<option value="참외">참외</option>
+			<option value="사과">사과</option>
 			<option value="수박">수박</option>
 			<option value="오렌지">오렌지</option>
-			<option value="키위">키위</option>
 		</select> <br>
 		<!-- 일반 버튼의 버튼타입은 아무기능이 없다. 이에 따라 onclick을 넣어준다. -->
-
-		!-- 확인 버튼의 경우 onclick="proc01()" 로 함수를 호출하여 script에서 결과 실행 출력--><br>
 		<button type="button" onclick="proc01()">확인</button>
-		<br> <br> !-- 확인 버튼의 경우 onclick="proc02()" 로 함수를 호출하여 함수 내에서
-		submit()을 실행 --><br>
-		<button type="button" onclick="proc02()">확인2</button>
-		<br> <br> !-- 전송 버튼의 경우 직점 form의 action(현재의 경우
-		buttonsend.jsp)이 실행 및 결과 출력. --><br>
-		<button type="submit">submit전송</button>
-		<br>
+		<button type="submit">전송</button>
 		<button type="reset">취소</button>
-		<br> <br> !-- 일반 전송 버튼의 경우 submit과 같다. --><br>
-		<button>normal전송</button>
-		<br> <br>
+		<button>전송</button>
 	</form>
 
 
@@ -121,7 +99,7 @@ script : 요소에 접근하여 표현 > ff.fruit.value
 	<br>script에서 div에 접근하기위해서
 	<br>*과거 버전 (실행 속도면 좋음)
 	<br>document.getElementById("result")
-	<br>document.getElementsByTagName("div")[0]
+	<br>document.getElementsByTagName("div")
 	<br>*현재 버전 (사용 편의성 좋음)
 	<!-- id로 접근 -->
 	<br>document.querySelector("#result")
@@ -129,7 +107,6 @@ script : 요소에 접근하여 표현 > ff.fruit.value
 	<br>document.querySelector("div")
 	<br>*접근 요소에 출력 - innerHTML / textContent
 	<br>일반적으로 innerHTML
-	<br>
-	<div id="result"></div>
+	<div id="result1"></div>
 </body>
 </html>

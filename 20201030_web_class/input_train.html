@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+form {
+	border: 1px solid blue;
+	padding: 10px;
+	margin: 10px;
+	width: 50%;
+	height: 320px;
+	box-sizing: border-box;
+}
+
+#form2 {
+	height: 250px;
+}
+
+label {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+}
+</style>
+</head>
+<body>
+
+
+	<form action="input1.jsp" method="post">
+		<p>이메일전송</p>
+		<label>이름</label><input type="text" name="name"><br>
+		<!--  -->
+		<label>이메일</label><input type="email" name="email"
+			placeholder="none@none.com"><br>
+		<!--  -->
+		<label>내용</label><br>
+		<textarea style="width: 80%; " name="txt" rows="8" cols="50"
+			placeholder="아무거나 입력하세요 "></textarea>
+		<br>
+		<button type="submit">전송</button>
+		<button type="reset">재설정</button>
+	</form>
+
+
+
+
+	<form action="input2.jsp" method="post" id="form2">
+		<p>회원가입</p>
+
+		<label>이름</label><input type="text" name="name"><br>
+		<!--  -->
+		<label>주소</label><input type="text" name="addr"><br>
+		<!--  -->
+		<label>이메일</label><input type="email" name="email"
+			placeholder="none@none.com"><br>
+
+		<!--  -->
+		<input type="radio" value="남자" name="gend">남자<br>
+		<!--  -->
+		<input type="radio" value="여자" name="gend">여자<br>
+
+		<button type="submit">Send</button>
+		<button type="reset">원래대로</button>
+
+	</form>
+
+
+</body>
+</html>

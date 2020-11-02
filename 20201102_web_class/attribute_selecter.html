@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+p {
+	color: red;
+}
+
+/* 타이틀 속성 .. 현재 title 하나뿐이기에 p[title] 로도 사용 가능*/
+p[title="무궁화 꽃"] {
+	font-size: 1.5em;
+}
+/* 속성 선택자 대체*/
+
+/* 속성 선택자 사용  위의 #p{} */
+p[id=p1] {
+	background: yellow;
+}
+
+p[id=f1] {
+	font-family: serif;
+}
+
+p[id=f2] {
+	font-family: sans-serif;
+}
+
+#f3 {
+	font-family: monospace;
+}
+/* 속성 선택자 대체*/
+.p2 {
+	
+}
+/* 속성 선택자 사용 */
+p[class=p2] {
+	/* 글자 사이간격 */
+	letter-spacing: 10px;
+}
+/* 속성 선택자 사용 */
+p[name=happy] {
+	/* 텍스트 그림자 x축 20 --> y축 10 --> 그림자선명도 px 커질수록 흐림. --> 그림자색 */
+	font-size: 2.0em;
+	/* 폰트의 두께 개념 */
+	font-weight: bold;
+	font-style: italic;
+	text-shadow: 20px 10px 5px blue;
+}
+/*rgb a 는 투명도...*/
+</style>
+</head>
+<body>
+	<p id="f1" title="무궁화 꽃">무궁화 꽃이 피었습니다.1a</p>
+	<p id="f2" title="무궁화 꽃">무궁화 꽃이 피었습니다.1b</p>
+	<p id="f3" title="무궁화 꽃">무궁화 꽃이 피었습니다.1c</p>
+	<!-- 동적으로 하기위해서는 scripts 사용 -->
+	<p id="p1">무궁화 꽃이 피었습니다.2</p>
+	<p class="p2">무궁화 꽃이 피었습니다.3</p>
+	<p name="happy">무궁화 꽃이 피었습니다.4</p>
+</body>
+</html>

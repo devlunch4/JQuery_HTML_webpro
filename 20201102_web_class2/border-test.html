@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+div {
+	width: 200px;
+	height: 200px;
+	border: 1px solid green;
+	margin: 10px;
+}
+
+#d2 {
+	/*원*/
+	border-radius: 50%;
+	box-shadow: 30px 20px 10px red;
+}
+
+#d3 { /*보더 모서리 편집 위아래매칭대각선1 위아래매칭대각선2*/
+	border-radius: 10px 50px;
+}
+
+#d4 {
+	/*보더 모서리 편집 왼쪽위1 오른쪽위 2 왼쪽아래3 오른쪽아래4*/
+	border-radius: 0px 50% 50% 50%
+}
+</style>
+</head>
+<body>
+	<div id="d1">기본</div>
+	<div id="d2">
+		border-radius: 50%;<br> box-shadow: 30px 20px 10px red;
+	</div>
+	<div id="d3">border-radius: 10px 50px;</div>
+	<div id="d4">border-radius: 0px 50% 50% 50%</div>
+</body>
+</html>

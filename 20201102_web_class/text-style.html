@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style type="text/css">
+div {
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid red;
+}
+
+textarea {
+	/* direction: rtl; 오른쪽에서 왼쪽으로 타이핑 늘어남*/
+	/* direction: ltr; 왼쪽에서 오른쪽으로 타이핑 늘어남*/
+	direction: rtl;
+}
+
+#d1 {
+	/*text-indent: 들여쓰기 수치값*/
+	text-indent: 50px;
+	/*line-height: 줄의 높이 줄 간격 수치값*/
+	line-height: 25px;
+	/*letter-spacing: 글자 간격 수치값*/
+	letter-spacing: 2px;
+}
+
+#d2 {
+	/* text-align: right; 오른쪽 정렬 */
+	text-align: right;
+	/*text-decoration: underline; 밑줄 */
+	text-decoration: underline;
+}
+
+#p1 { /*텍스트 소문자로만*/
+	text-transform: lowercase;
+}
+
+#p2 { /*텍스트 대문자로만*/
+	text-transform: uppercase;
+}
+
+#p3 { /*텍스트 앞글자만 대문자로만*/
+	text-transform: capitalize;
+}
+</style>
+</head>
+<pre>
+textarea {
+	/* direction: rtl; 오른쪽에서 왼쪽으로 타이핑 늘어남*/
+	/* direction: ltr; 왼쪽에서 오른쪽으로 타이핑 늘어남*/
+	direction: rtl;
+}
+
+#d1 {
+	/*text-indent: 들여쓰기 수치값*/
+	text-indent: 50px;
+	/*line-height: 줄의 높이 줄 간격 수치값*/
+	line-height: 25px;
+	/*letter-spacing: 글자 간격 수치값*/
+	letter-spacing: 2px;
+}
+
+#d2 {
+	/* text-align: right; 오른쪽 정렬 */
+	text-align: right;
+	/*text-decoration: underline; 밑줄 */
+	text-decoration: underline;
+}
+
+
+
+</pre>
+<body>
+	<textarea rows="10" cols="60"></textarea>
+	<br>
+	<br>
+	<div id="d1">핵융합이란 가벼운 핵(nucleus)들이 결합하여 보다 무거운 핵이 되는 것을 말한다. 철원자
+		핵보다 가벼운 핵은 핵자당의 결합에너지(binding energy)가 질량이 작을수록 낮아서 보다 무거운 핵으로 될 때 더
+		안정한 핵이 될 수 있다. [네이버 지식백과] 핵융합 [Nuclear fusion] (물리학백과)</div>
+	<br>
+	<div id="d2">태양에서 방출되는 에너지는 그 안에서 양성자가 헬륨원자 핵으로 융합되는 과정에서 나오는
+		것이다. 뿐만 아니라 지구 상의 생명체를 형성하고 있고 그 유지를 위해 필수적인 탄소와 산소같은 원소들도 핵융합과정을 거쳐
+		만들어진 것이다. 따라서 생명현상은 핵융합으로부터 기인한 것이라고 해도 지나친 말이 아니다. [네이버 지식백과] 핵융합
+		[Nuclear fusion] (물리학백과)</div>
+	<br>
+	<div id="d3">
+
+		<p id="p1">
+			text-transform: lowercase;<br> Happy New year~~~1<br>
+		<p id="p2">
+			text-transform: uppercase;<br> Happy New year~~~2<br>
+		<p id="p3">
+			text-transform: capitalize;<br>Happy New year~~~3<br>
+	</div>
+
+</body>
+</html>

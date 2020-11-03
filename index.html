@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- *는 모두, 가운데 정렬 center -->
 <style>
-* {
+ul, li {
 	text-align: left;
 }
 
@@ -13,20 +12,40 @@ h3 {
 	text-align: center;
 }
 
-div {
+.diva {
+	
 	width: 200px;
-	height: 250px;
+	height: 280px;
 	border: 1px solid green;
-	margin: 2px;
-	padding: 5px;
+	margin: 5px;
+	padding: 8px;
 	float: left;
 	/*넘칠경우*/
 	overflow: auto;
 }
 
+#last {
+	clear: both;
+	border: 1px dotted red;
+	width: 100%;
+	height: 25px;
+	background-color: red;
+	text-align: center;
+	position: static;
+	bottom: 0;
+}
+
 img {
 	width: 80px;
 	height: 80px
+}
+
+#smoth {
+	text-align: center;
+}
+
+#dmain {
+	text-align: center;
 }
 
 h1 {
@@ -61,10 +80,12 @@ span {
 <body>
 	<h1>Hello HTML WORLD~~~ 우성 입니다.</h1>
 	<!-- 현위치는 './' -->
-	<img src="./images/딸기스무디.jpg">
+	<p id="smoth">
+		<img src="./images/딸기스무디.jpg">
+	</p>
 	<br>
-	<br>
-	<div>
+
+	<div class="diva">
 		<h3>
 			<span>1021</span>
 		</h3>
@@ -79,7 +100,7 @@ span {
 		</ul>
 	</div>
 
-	<div>
+	<div class="diva">
 		<h3>1022</h3>
 		<hr>
 		<ul>
@@ -89,7 +110,7 @@ span {
 		</ul>
 	</div>
 
-	<div>
+	<div class="diva">
 		<h3>
 			<span>1023</span>
 		</h3>
@@ -102,7 +123,7 @@ span {
 		</ul>
 	</div>
 
-	<div>
+	<div class="diva">
 		<h3>1026</h3>
 		<hr>
 		<ul>
@@ -115,7 +136,7 @@ span {
 		</ul>
 	</div>
 
-	<div style="background-color: #FFFF00">
+	<div class="diva" style="background-color: #FFFF00">
 		<h3>1027</h3>
 		<hr>
 		<ul>
@@ -128,7 +149,7 @@ span {
 	</div>
 
 
-	<div style="background-color: #FFFF00">
+	<div class="diva" style="background-color: #FFFF00">
 		<h3>1029</h3>
 		<hr>
 		<ul>
@@ -140,7 +161,7 @@ span {
 
 
 
-	<div>
+	<div class="diva">
 		<h3>1030</h3>
 		<hr>
 		<ul>
@@ -151,7 +172,7 @@ span {
 	</div>
 
 
-	<div>
+	<div class="diva">
 		<h3>1102a</h3>
 		<hr>
 		<ul>
@@ -164,7 +185,7 @@ span {
 		</ul>
 	</div>
 
-	<div>
+	<div class="diva">
 		<h3>1102b</h3>
 		<hr>
 		<ul>
@@ -174,20 +195,23 @@ span {
 		</ul>
 	</div>
 
-	<div>
+	<div class="diva">
 		<h3>1103</h3>
 		<hr>
 		<ul>
-			<li><a href="./20201103_web_class/absolute-positionl.html">absolute-position</a></li>
-			<li><a href="./20201103_web_class/display_attributel.html">display_attribute</a></li>
-			<li><a href="./20201103_web_class/div_floatl.html">div_float</a></li>
-			<li><a href="./20201103_web_class/float-propertyl.html">float-property</a></li>
+			<li><a href="./20201103_web_class/absolute-position.html">absolute-position</a></li>
+			<li><a href="./20201103_web_class/display_attribute.html">display_attribute</a></li>
+			<li><a href="./20201103_web_class/div_float.html">div_float</a></li>
+			<li><a href="./20201103_web_class/float-property.html">float-property</a></li>
 			<li><a href="./20201103_web_class/static-position.html">static-position</a></li>
 			<li><a href="./20201103_web_class/table-style.html">table-style</a></li>
 			<li><a href="./20201103_web_class/z-index.html">z-index</a></li>
-
-
+			<li><a href="./20201103_web_class/layout_train.html">layout_train</a></li>
 		</ul>
+	</div>
+	<br>
+	<div id="last">
+		<strong>COPYRIGHT 2020</strong>
 	</div>
 
 

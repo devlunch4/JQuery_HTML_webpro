@@ -46,6 +46,41 @@ div {
 </style>
 </head>
 <body>
+<pre>
+div {
+	margin: 2px;
+	padding: 3px;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+#header {
+	height: 80px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-image: linear-gradient(white, Green);
+}
+#nav {
+	width: calc(25% - 1%);
+	height: 200px;
+	float: left;
+	background: red;
+}
+#content {
+	width: calc(75% - 1%);
+	height: 200px;
+	float: right;
+	background: yellow;
+}
+#footer {
+
+	height: 80px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background: skyblue;
+	/* background-image: linear-gradient(white, Green); */
+	clear: both;
+}
+</pre>
 	<div id="header"></div>
 	<div id="nav"></div>
 	<div id="content"></div>

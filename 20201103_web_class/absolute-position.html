@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+p, div {
+	width: 150px;
+	height: 50px;
+	margin: 10px;
+}
+
+#one, #one2, #one3 {
+	background: LightCoral;
+}
+
+#two, #two2, #two3 {
+	background: LightBlue;
+}
+
+#three, #three2, #three3 {
+	background: Teal;
+}
+
+#one2 {
+	/* 절대위치 시작점이 왼쪽 최상단 0,0 위치 */
+	position: absolute;
+	top: 100px;
+	left: 50px;
+}
+
+#two3 {
+	/* 스크롤바를 움직여도 다른것은 움직이나 fixed 된것은 고정되어있다. */
+	position: fixed;
+	top: 150px;
+	right: 50px;
+}
+</style>
+</head>
+<body>
+<pre>original</pre>
+	<p id="one">block #1</p>
+	<div id="two">
+		block #2<br /> position:static;<br />
+	</div>
+	<p id="three">block #3</p>
+	<hr color="blue">
+	<!--  -->
+	<pre>
+컨테이너의 원점을 기준으로 배치
+#one2 {
+	/* 절대위치 시작점이 왼쪽 최상단 0,0 위치 */
+	position: absolute;
+	top: 100px;
+	left: 50px;
+}
+</pre>
+	<p id="one2">
+		block #1<br> position:absolute;
+	</p>
+	<div id="two2">
+		block #2<br />
+	</div>
+	<p id="three2">block #3</p>
+	<hr color="blue">
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<pre>
+#two3 {
+	/* 스크롤바를 움직여도 다른것은 움직이나 fixed 된것은 고정되어있다. */
+	position: fixed;
+	top: 150px;
+	right: 50px;
+}
+</pre>
+	<p id="one3">block #1</p>
+	<div id="two3">
+		block #2<br> position:fixed;
+	</div>
+	<p id="three3">block #3</p>
+	<hr color="blue">
+
+</body>
+</html>

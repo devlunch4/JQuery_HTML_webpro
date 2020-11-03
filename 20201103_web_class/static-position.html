@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+p, div {
+	width: 150px;
+	height: 50px;
+	margin: 10px;
+}
+
+#one, #one2 {
+	background: LightCoral;
+}
+
+#two, #two2 {
+	background: LightBlue;
+}
+
+#three, #three2 {
+	background: Teal;
+}
+
+#one2 {
+	border: 1px solid black;
+}
+
+#two2 {
+	border: 1px solid black;
+	/* 정상적인 위치가 기준 */
+	position: relative;
+	top: 100px;
+	left: 100px;
+}
+
+#three2 {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+	<p id="one">block #1</p>
+	<div id="two">
+		block #2<br /> position:static;<br />
+	</div>
+	<p id="three">block #3</p>
+	<hr color="red">
+	<!--  -->
+	<!--  -->
+	<pre>
+현재위치(정적위치) 기준으로 이동
+#two2 {
+border: 1px solid black;
+/* 정상적인 위치가 기준 */
+position: relative;
+top: 100px;
+left: 100px;
+}
+	</pre>
+	<p id="one2">block #1</p>
+	<div id="two2">
+		block #2<br /> position:static;<br />
+	</div>
+	<p id="three2">block #3</p>
+	<hr color="red">
+</body>
+
+</html>

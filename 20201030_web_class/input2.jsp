@@ -47,8 +47,6 @@ table {
 			<td>성별 :</td>
 			<td><%=usergend%></td>
 		</tr>
-
-
 	</table>
 
 </body>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+label {
+	/* width: 100px;  <<< 적용불가 // display 필요 */
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+}
+
+/* div {
+	background: blue;
+	display: none;
+} */
+div#result1 {
+	border: 1px dotted red;
+	width: 200px;
+	height: 200px;
+	display: none;
+}
+
+#p1:hover {
+	color: gray;
+	font-size: 1.5em;
+	text-decoration: underline;
+	background: yellow;
+}
+</style>
+
+<script type="text/javascript">
+	function proc01() {
+		//이름과 전화번호의 입력한 값 가져오기
+		var name = document.getElementById('name').value;
+		var tel = document.querySelector('#tel').value;
+
+		//결과 출력
+		var res = "<h2>결과 출력</h2>";
+		res += "<label>이름</label>" + name + "<br>";
+		res += "<label>전화</label>" + tel + "<br>";
+
+		document.getElementById('result1').innerHTML = res;
+		document.getElementById('ff').style.display = "none";
+		document.getElementById('result1').style.display = "block";
+	}
+
+	function proc2() {
+		document.getElementById('name').value = "";
+		document.getElementById('tel').value = "";
+		document.getElementById('ff').style.display = "block";
+		document.getElementById('result1').style.display = "none";
+
+	}
+</script>
+</head>
+<body>
+	<pre>
+이름과 전화번호를 입력한다.
+확인버튼을 클릭하면 입력폼은 사라지고 결과 div가 나타난다
+document.getElementById('ff').style.display = "none";
+document.getElementById('result1').style.display = "block";
+//
+무궁화 꽃이 피었습니다 를 클릭하면 반대로 결과 div는 사라지고
+입력폼이 다시 나타난다.
+document.getElementById('ff').style.display = "block";
+document.getElementById('result1').style.display = "none";
+
+</pre>
+	<p id="p1" onclick="proc2()">무궁화 꽃이 피었습니다</p>
+	<form id="ff">
+		<!--  -->
+		<label>이름</label> <input type="text" id="name"> <br>
+		<!--  -->
+		<label>전화번호</label> <input type="text" id="tel"> <br>
+		<!-- onclick 는 스크립트 부분에서 해야함. -->
+		<input type="button" value="확인" onclick="proc01()">
+		<button type="reset">초기화</button>
+		<br>
+	</form>
+
+	<div id="result1"></div>
+</body>
+</html>

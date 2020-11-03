@@ -1,8 +1,10 @@
-@charset = "UTF-8";
-
-pre{
-	padding : 10px 20px;
-	background : #FFD700;
-	border-top : 2px solid blue;
-	border-bottem : 5px double blue;
+@charset="UTF-8";
+pre {
+	padding: 10px 20px;
+	background: #F5DEB3;
+	/* PowderBlue; #B0E0E6 */
+	/* LightSalmon #FFA07A;*/
+	/* Wheat #F5DEB3 */
+	border-top: 2px solid blue;
+	border-bottem: 5px double blue;
 }

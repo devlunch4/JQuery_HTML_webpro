@@ -12,13 +12,24 @@ h3 {
 	text-align: center;
 }
 
-.diva {
-	
+div {
 	width: 200px;
-	height: 280px;
+	height: 290px;
+}
+
+.diva {
 	border: 1px solid green;
-	margin: 5px;
-	padding: 8px;
+	margin: 2px;
+	padding: 2px;
+	float: left;
+	/*넘칠경우*/
+	overflow: auto;
+}
+
+.divb {
+	border: 1px solid red;
+	margin: 2px;
+	padding: 2px;
 	float: left;
 	/*넘칠경우*/
 	overflow: auto;
@@ -69,7 +80,7 @@ a:hover { //마우스 올려놨을 때 color :gray;
 a:active {
 	color: red;
 }
-
+/*스판 diva 만 기울기*/
 span {
 	font-weight: bold;
 	font-style: italic;
@@ -87,7 +98,7 @@ span {
 
 	<div class="diva">
 		<h3>
-			<span>1021</span>
+			1021
 		</h3>
 		<hr>
 		<ul>
@@ -112,7 +123,7 @@ span {
 
 	<div class="diva">
 		<h3>
-			<span>1023</span>
+			1023
 		</h3>
 		<hr>
 		<ul>
@@ -136,7 +147,7 @@ span {
 		</ul>
 	</div>
 
-	<div class="diva" style="background-color: #FFFF00">
+	<div class="diva">
 		<h3>1027</h3>
 		<hr>
 		<ul>
@@ -149,7 +160,7 @@ span {
 	</div>
 
 
-	<div class="diva" style="background-color: #FFFF00">
+	<div class="diva">
 		<h3>1029</h3>
 		<hr>
 		<ul>
@@ -209,6 +220,19 @@ span {
 			<li><a href="./20201103_web_class/layout_train.html">layout_train</a></li>
 		</ul>
 	</div>
+
+	<div class="divb">
+		<h3>1104</h3>
+		<hr>
+		<ul>
+			<li><a href="./20201104_js_class/input_value.html">input_value</a></li>
+			<li><a href="./20201104_js_class/jstest1.html">jstest1</a></li>
+			<li><a href="./20201104_js_class/jstest2.html">jstest2</a></li>
+			<li><a href="./20201104_js_class/prompt_test.html">prompt_test</a></li>
+			<li><a href="./20201104_js_class/prompt_ifcalc.html">prompt_ifcalc</a></li>
+		</ul>
+	</div>
+
 	<br>
 	<div id="last">
 		<strong>COPYRIGHT 2020</strong>

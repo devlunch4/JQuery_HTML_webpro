@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+div {
+	border: 1px solid red;
+	width: 100px;
+	height: 100px;
+	padding: 5px;
+}
+</style>
+<script type="text/javascript">
+	function proc1() {
+		su1 = parseInt(prompt("정수1를 입력하세요"));
+		su2 = parseInt(prompt("정수2를 입력하세요"));
+		oper = (prompt("+,-,*,/ 연산자 중  하나를 선택하세요"));
+
+		str = document.getElementById('result');
+		switch (oper) {
+		case "+":
+			res = su1 + su2;
+			alert(su1 + " + " + su2 + " = " + res);
+
+			break;
+		case "-":
+			res = su1 - su2;
+			alert(su1 + " - " + su2 + " = " + res);
+
+			break;
+		case "*":
+			res = su1 * su2;
+			alert(su1 + " * " + su2 + " = " + res);
+
+			break;
+		case "/":
+			res = su1 / su2;
+			alert(su1 + " / " + su2 + " = " + res);
+
+			break;
+		default:
+			alert("잘못된입력");
+			str.innerHTML = "잘못된입력";
+			break;
+		}
+		str2 = "수1 : " + su1 + "<br>"
+		str2 += "수2 : " + su2 + "<br>"
+		str2 += "연산자 : " + oper + "<br>"
+		str2 += su1 + " " + oper + " " + su2 + " = " + res + "<br>";
+
+		str.innerHTML = str2;
+
+	}
+</script>
+</head>
+<body>
+	<pre>
+확인버튼 클릭하면 preoc1()함수 호출
+두개의 수와 연산자 하나를 입력 받는다. prompt이용
+
+연산자의 종류에 따라서 각 연산을 수행한다.</pre>
+	<input type="button" value="연산확인" onclick="proc1()">
+	<br>
+	<br>
+	<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+</style>
+<script type="text/javascript">
+	function proc01() {
+		//alert("hello~");
+		document.write("hello~~")
+		//document.getElementById('result').textContent = "Hello~~~";
+	}
+</script>
+
+
+
+
+</head>
+<body>
+<pre>
+확인버튼을 클릭하면 proc01() 함수호출
+함수내에서 출력문 작성
+
+alert("hello~");
+==> 팝업창으로 입력내용 출력 
+
+document.write("hello~~")
+==> 기존에 만들어져 실행되어있는 문서를 덮어쓴다.
+확인 클릭시 화면전환(기존화면 덮어쓰기)되며 입력내용 출력
+
+document.getElementById('result').textContent = "Hello~~~";
+==>
+</pre>
+	<input type="button" value="확인" onclick="proc01()">
+	<div id="result"></div>
+</body>
+</html>

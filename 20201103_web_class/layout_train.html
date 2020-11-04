@@ -12,6 +12,12 @@ div {
 	border-radius: 10px;
 }
 
+img {
+	box-sizing: border-box;
+	width: calc(80% - 1%);
+	height: calc(80% - 1%);
+}
+
 #header {
 	vertical-align: center;
 	text-align: center;
@@ -22,6 +28,7 @@ div {
 }
 
 #nav {
+	/* box-sizing: border-box; */
 	width: calc(22% - 1%);
 	height: auto;
 	float: left;
@@ -29,6 +36,7 @@ div {
 }
 
 #content {
+	/* 	box-sizing: border-box; */
 	width: calc(78% - 1%);
 	height: auto;
 	float: right;
@@ -46,7 +54,7 @@ div {
 	font-size: 8px;
 	text-align: left;
 	border: 5px dotted RED;
-	width: 90%;
+	width: calc(90% - 1%);
 	height: auto;
 	margin: auto;
 	border: 5px dotted RED;
@@ -64,7 +72,7 @@ div {
 		<ul>
 			<li><a href="https://www.naver.com/">네이버</a>
 			<li><a href="https://www.daum.net/">다음</a>
-			<li><img src="../images/코알라.jpg" width="100px" height="100px">
+			<li><img src="../images/코알라.jpg">
 		</ul>
 
 	</div>

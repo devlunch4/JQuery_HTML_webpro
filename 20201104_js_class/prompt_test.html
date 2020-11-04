@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+</style>
+<script>
+	window.onload = function() {
+
+		input1 = parseInt(prompt("정수1를 입력하세요"));
+		input2 = parseInt(prompt("정수2를 입력하세요"));
+
+		sum = input1 + input2;
+		sub = input1 - input2;
+		multi = input1 * input2;
+		divide = input1 / input2;
+
+		res = "input1 : " + input1 + "<br>";
+		res += "input2 : " + input2 + "<br>";
+		res += "input1 + input2 = " + sum + "<br>";
+		res += "input1 - input2 = " + sub + "<br>";
+		res += "input1 * input2 = " + multi + "<br>";
+		res += "input1 / input2 = " + divide + "<br>";
+
+//		document.write("input1 : " + input1 + "<br>");
+//		document.write("input2 : " + input2 + "<br>");
+//		document.write("input1 + input2 = " + sum + "<br>");
+//		document.write("input1 - input2 = " + sub + "<br>");
+//		document.write("input1 * input2 = " + multi + "<br>");
+//		document.write("input1 / input2 = " + divide + "<br><br>");
+
+		//document.write(res);
+		document.getElementById('result').innerHTML = res;
+	}
+</script>
+</head>
+<body>
+	<pre>
+입력: prompt("para1", "para2");
+	para2는 옵션, 생략가능
+	입력한 갑승ㄹ 덧셈 연산시 parseInt를 이용/변환해주어 계산을 해야한다.
+</pre>
+	<img src="../images/진달래꽃.jpg">
+	<div id="result"></div>
+
+</body>
+</html>

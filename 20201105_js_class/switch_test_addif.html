@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public2.css">
+<style>
+/* div {
+	border: 1px solid red;
+	width: 200px;
+	height: auto;
+	padding: 5px;
+} */
+</style>
+<script type="text/javascript">
+	function proc1() {
+		su1 = parseInt(prompt("정수1를 입력하세요"));
+		su2 = parseInt(prompt("정수2를 입력하세요"));
+		oper = (prompt("+,-,*,/ 연산자 중  하나를 선택하세요"));
+
+		str = document.getElementById('result');
+		switch (oper) {
+		case "+":
+			res = su1 + su2;
+			alert(su1 + " + " + su2 + " = " + res);
+
+			break;
+		case "-":
+			res = su1 - su2;
+			alert(su1 + " - " + su2 + " = " + res);
+
+			break;
+		case "*":
+			res = su1 * su2;
+			alert(su1 + " * " + su2 + " = " + res);
+
+			break;
+		case "/":
+			res = su1 / su2;
+			alert(su1 + " / " + su2 + " = " + res);
+
+			break;
+		default:
+			alert("잘못된입력");
+			str.innerHTML = "잘못된입력";
+			break;
+		}
+		str2 = "수1 : " + su1 + "<br>"
+		str2 += "수2 : " + su2 + "<br>"
+		str2 += "연산자 : " + oper + "<br>"
+		str2 += su1 + " " + oper + " " + su2 + " = " + res + "<br>";
+
+		//str.innerHTML = str2;
+		str3 = ` 결과 : ${su1} ${oper} ${su2} = ${res} `;
+		str.innerHTML = str2 + "<br>" + str3;
+
+	}
+
+	function proc2() {
+
+		score = parseInt(prompt("점수를 입력하세요"));
+		tscore = parseInt(score / 10);
+
+		res = "점수 : " + score + "<br>";
+		switch (tscore) {
+		case 10:
+			res += "학점 A 입니다. <br><br>"
+			res1 = "A";
+			break;
+		case 9:
+			res += "학점 A 입니다. <br><br>"
+			res1 = "A";
+			break;
+		case 8:
+			res += "학점 B 입니다. <br><br>"
+			res1 = "B";
+			break;
+		case 7:
+			res += "학점 C 입니다. <br><br>"
+			res1 = "C";
+			break;
+		case 6:
+			res += "학점 D 입니다. <br><br>"
+			res1 = "D";
+			break;
+		/* 		case 5, 4, 3, 2, 1:
+		 res = "학점 F 입니다."
+		 break; */
+		default:
+			res += "학점 F 입니다. <br><br>"
+			res1 = "F";
+			break;
+		/* alert("잘못된입력");
+		str.innerHTML = "잘못된입력";
+		break; */
+		}
+
+		res += ` 점수 : ${score} \n 학점 : ${res1}`;
+		str = document.getElementById('result2');
+		str.innerHTML = res;
+
+	}
+
+	function proc3() {
+		//입력1 가위1,바위2,보3
+
+		in1 = prompt("첫번째 사람");
+		//입력2
+		in2 = prompt("두번째 사람");
+		//res 출력
+		res = `첫번째 사람 : ${in1} <br>`;
+		res += `두번째 사람 : ${in2} <br>`;
+		res += `결과 : `;
+
+		//승자 비교
+		if (in1 == in2) {
+			res += `둘이 비김 <br>`;
+		} else if (in1 == "가위" && in2 == "보" || in1 == "바위" && in2 == "가위"
+				|| in1 == "보" && in2 == "바위") {
+			res += `첫번째 사람 이김 <br>`;
+		} else {
+			res += `두번째 사람 이김 <br>`;
+		}
+		document.getElementById('result3').innerHTML = res;
+	}
+</script>
+</head>
+<body>
+	<pre>
+확인버튼 클릭하면 preoc1()함수 호출
+두개의 수와 연산자 하나를 입력 받는다. prompt이용
+
+연산자의 종류에 따라서 각 연산을 수행한다.
+
+백틱, backquote, backtic, grave accent,
+템플릿 리터럴 : script에서 backtic(`)을 사용한 문자열을
+표현한 것을 템플릿 리터럴 이라고 한다.
+
+일반 문자열은 각 문자열("",'')과 변수사이를 (+)기호를 사용하여
+문자열을 구성한다. 
+'문자열 ${변수} 문자열 문자열 ${변수}'
+</pre>
+	<div class="box">
+		<h3>두 정수 입력하여 연산하기</h3>
+		수1, 수2입력 -prompt()<br> 연산자입력<br> 연산자에 따라 두수를 계산한다<br> <br>
+		<input type="button" value="연산확인1" onclick="proc1()"> <br>
+		<br>
+		<div id="result"></div>
+	</div>
+
+	<div class="box">
+		<h3>정수를 입력하여 점수 등급 확인 하기</h3>
+		0~100점 사이의 값을 입력 -prompt()<br> 학점구하기<br> <br> <input
+			type="button" value="점수별 등급확인" onclick="proc2()"> <br> <br>
+		<div id="result2"></div>
+	</div>
+
+	<div class="box" id="handfight">
+		<h3>가위바위보</h3>
+		두사람의 가위바위보 각각입력 -prompt()<br> 승자출력하기<br> <br> <input
+			type="button" value="가위바위보 시작" onclick="proc3()"> <br> <br>
+		<div id="result3"></div>
+	</div>
+</body>
+</html>

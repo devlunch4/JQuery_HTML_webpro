@@ -3,24 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
 <style type="text/css">
 </style>
 <script type="text/javascript">
-//함수 추가
-function calc(){
-	var a = document.ff.price.value;
-	var b = document.ff.qty.value;
-	
-	var c = a * b;
-	alert(c + "원 입니다.");
-}
-</script>
+	//함수 속성 추가
+	function calc() {
+		var a = document.ff.price.value;
+		var b = document.ff.qty.value;
 
+		var c = a * b;
+		alert(c + "원 입니다.");
+	}
+</script>
 </head>
 <body>
 	<pre>
 input type="button" 요소는 자체 기능이 없다.
 기능을 부여하기 위해서 script를 이용한다
+
+scripts 에서 form의 요소에 접근하기
+- form name 속성을 이용하기
+document.ff.price
+document.ff.qty
+
+- form요소의 값을 가져오기
+document.ff.price.value
+document.ff.qty.value
 </pre>
 
 	<form name="ff" action="script.jsp" method="post">
@@ -28,12 +37,18 @@ input type="button" 요소는 자체 기능이 없다.
 		물품가격 : <input type="text" name="price"> <br>
 		<!-- 수량 입력  -->
 		수량 : <input type="text" name="qty"> <br>
+
 		<!-- 버튼 생성 hello 출력 -->
-		<input type="button" value="확인" onclick="alert('hello1')">
-		<!-- 버튼 생성 함수 호출 -->
-		<input type="button" value="확인calc" onclick="calc()">
-		<!-- 승인 생성 및 함수 호출 -->
-		<input type="submit" value="전송" onclick="">
+		<input type="button" value="확인" onclick="alert('hello1')"><br>
+		&lt;input type="button" value="확인" onclick="alert('hello1')"><br>
+
+		<!-- 버튼 생성 함수 호출 : 버튼 클릭시 내장 상위 calc() 실행-->
+		<input type="button" value="확인calc" onclick="calc()"><br>
+		&lt;input type="button" value="확인calc" onclick="calc()"><br>
+
+		<!-- 승인 생성 및 함수 호출 : 버튼 클릭시 script.jsp 실행 -->
+		<input type="submit" value="전송" onclick=""><br> &lt;input
+		type="submit" value="전송" onclick=""><br>
 	</form>
 </body>
 </html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public2.css">
+<style>
+.box {
+	width: 600px;
+}
+
+input[type=button] {
+	width: 120px;
+	background: pink;
+	padding: 5px 10px;
+	border-radius: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: pink;
+}
+</style>
+
+<script type="text/javascript">
+	//프린트 함수
+	function print(getresult) {
+		res = "";
+
+		for (i = 0; i < fruits.length; i++) {
+			res += fruits[i] + " ";
+		}
+		getresult.textContent = res;
+	}
+
+	function proc1() {
+		fruits = [ "사과1", "바나나", "딸기", "수박", "복숭아", "메론" ];
+
+		result1 = document.getElementById('result1');
+		print(result1);
+	}
+
+	function proc2() {
+		fruits = [ "사과2", "바나나", "딸기", "수박", "복숭아", "메론" ];
+
+		result2 = document.getElementById('result2');
+		print(result2);
+	}
+
+	function proc3() {
+		fruits = [ "사과3", "바나나", "딸기", "수박", "복숭아", "메론" ];
+
+		result3 = document.getElementById('result3');
+		print(result3);
+	}
+
+	/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+	function proc4() {
+		var fruits = [ "사과1", "바나나", "딸기", "수박", "복숭아", "메론" ];
+		var resultlocal = document.querySelector('#result4');
+		localprint(fruits, resultlocal);
+	}
+
+	function proc5() {
+		var fruits = [ "사과2", "바나나", "딸기", "수박", "복숭아", "메론" ];
+		var resultlocal = document.querySelector('#result5');
+		localprint(fruits, resultlocal);
+	}
+
+	function proc6() {
+		var fruits = [ "사과3", "바나나", "딸기", "수박", "복숭아", "메론" ];
+		var resultlocal = document.querySelector('#result6');
+		localprint(fruits, resultlocal);
+	}
+
+	function localprint(fr, reslo) {
+		res = "";
+		for (i = 0; i < fr.length; i++) {
+			res += fr[i] + " ";
+		}
+		reslo.innerHTML = res;
+	}
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h3>배열</h3>
+		print() 출력 함수 정의 <br> 전역변수를 이용한 출력<br>
+		<h3>
+			////////<br>프린트 함수 호출 및 사용
+		</h3>
+		각 메소드에서 프린트 메소드를 호출하여<br>해당 인자 값을 넘겨주고 출력을 한다. <br> 만약
+		proc1의 경우 fruits 앞에 'var'를 적용하면<br> 지역변수가되어 호출이 되지 않는다 =에러발생<br>
+		<br> <br> <input type="button" value="확인 리터럴"
+			onclick="proc1()"> <input type="button" value="확인 파라미터"
+			onclick="proc2()"> <input type="button" value="확인 default"
+			onclick="proc3()"> <br>
+		<div id="result1"></div>
+		<div id="result2"></div>
+		<div id="result3"></div>
+	</div>
+
+	<div class="box">
+		<h3>배열</h3>
+		local : print() 출력 함수 정의 <br> 지역변수를 이용한 출력<br>지역변수는 다른 함수
+		-print()를 호출시 매개변수로 값을 넘긴다<br> <br> <br> <input
+			type="button" value="확인 리터럴" onclick="proc4()"> <input
+			type="button" value="확인 파라미터" onclick="proc5()"> <input
+			type="button" value="확인 default" onclick="proc6()"> <br>
+		<div id="result4"></div>
+		<div id="result5"></div>
+		<div id="result6"></div>
+	</div>
+</body>
+</html>

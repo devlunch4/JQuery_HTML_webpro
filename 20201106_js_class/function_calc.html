@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public2.css">
+<style>
+</style>
+<script type="text/javascript">
+	function calc(open) {
+		//값가져오기	
+		var x = document.getElementById('x').value;
+		var y = document.getElementById('y').value;
+		x = parseInt(x);
+		y = parseInt(y);
+		//입력 인자에 따른 경우 변환 
+		switch (open) {
+		case "+":
+			vcalc = add(x, y);
+			break;
+		case "-":
+			vcalc = sub(x, y);
+			break;
+		case "*":
+			vcalc = multi(x, y);
+			break;
+		case "/":
+			//.toFixed(3) 소수3째자리 까지 출력
+			vcalc = divide(x, y).toFixed(3);
+			break;
+		default:
+			// 해당조건 없음; ㅠㅠ
+			break;
+		}
+		res = "x " + open + " y = 결과값 <br>"
+		res += x + " " + open + " " + y + " = " + vcalc + "<br><br>";
+
+		document.getElementById('result1').innerHTML += res;
+	}
+
+	function divide(a, b) {
+		return a / b;
+	}
+	function multi(a, b) {
+		return a * b;
+	}
+	function sub(a, b) {
+		return a - b;
+	}
+	function add(a, b) {
+		return a + b;
+	}
+</script>
+
+
+</head>
+<body>
+	<div class="box">
+		<h3>x y 계산</h3>
+		값 입력, 해당 연산 버튼 활성<br>연산 결과 누적 출력<br> <br> x : <input
+			type="text" id="x"><br> y : <input type="text" id="y"><br>
+		<br>
+		<!-- calc는 한개. 누르는 버튼에 따라 계산이 다름.
+		이에 따라 calc 내부에  파라미터로 값을 준다 -->
+		<input type="button" value="계산 x+y" onclick="calc('+')"> <input
+			type="button" value="계산 x-y" onclick="calc('-')"> <input
+			type="button" value="계산 x*y" onclick="calc('*')"> <input
+			type="button" value="계산 x/y" onclick="calc('/')"> <br> <br>
+		<div id="result1"></div>
+	</div>
+</body>
+</html>

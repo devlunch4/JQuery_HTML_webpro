@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public2.css">
+
+<style>
+/* 현재 스타일은 외부스타일(css)로 되어있음*/
+/*하지만 내부스타일(현html) 적용시 내부 스타일이 우선순위가 된다.*/
+input[type=button] {
+	width: 130px;
+	background: pink;
+	padding: 5px 10px;
+	border-radius: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: pink;
+}
+
+.box {
+	width: 500px;
+	background-color: PowderBlue;
+}
+</style>
+<script type="text/javascript">
+	//확인 리터럴 버튼
+	function proc1() {
+		fruits = [ "사과1", "바나나", "딸기", "수박", "복숭아", "메론" ];
+
+		result1 = document.getElementById('result1');
+		//일반적 출력
+		//result1.textContent = fruits;
+
+		//for 문을 통한 출력
+		res = "";
+		for (i = 0; i < fruits.length; i++) {
+			res += fruits[i] + " ";
+		}
+		result1.textContent = res;
+	}
+
+	//확인 파라미터 버튼
+	function proc2() {
+		fruits = new Array("사과2", "바나나", "딸기", "수박", "복숭아", "메론");
+		//아이디로 찾기
+		rerult2 = document.querySelector('#result2');
+		res = "";
+		for (i = 0; i < fruits.length; i++) {
+			res += fruits[i] + " ";
+		}
+		result2.textContent = res;
+	}
+	//배개변수 없는 생성자
+	function proc3() {
+		fruits = new Array();
+		fruits[0] = "사과3";
+		fruits[1] = "바나나";
+		fruits[2] = "딸기";
+		result3 = document.querySelector('#result3');
+		res = "";
+		for (i = 0; i < fruits.length; i++) {
+			res += fruits[i] + " ";
+		}
+		result3.textContent = res;
+
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>배열 생성 및 예시</h3>
+		자료형 상관없이 많은 양의 데이터를 일괄처리한다.<br>
+		<!-- html 에서 배열의 크기는 자바와 다르게 유동적이다. -->
+		배열의 크리는 유동적이다.<br> <br> 1.리터럴로 직접생성<br> fruit =
+		["사과","바나나"] <br> 2.생성자(Array 객체) 매개변수로 생성 <br> fruit = new
+		Array("사과", "바나나") <br> 3.배개변수 없는 생성자<br> fruit = new
+		Array(); <br> fruit[0] = "사과"; <br> fruit[1] = "바나나"; <br>
+		<br> <br> <input type="button" value="확인 리터럴"
+			onclick="proc1()"> <input type="button" value="확인 파라미터"
+			onclick="proc2()"> <input type="button" value="확인 default"
+			onclick="proc3()"> <br>
+		<div id="result1"></div>
+		<div id="result2"></div>
+		<div id="result3"></div>
+
+	</div>
+</body>
+</html>

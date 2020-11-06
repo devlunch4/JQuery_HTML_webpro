@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public2.css">
+<style>
+</style>
+<script type="text/javascript">
+	function proc1() {
+		sum = 0;
+		res = "";
+		while (true) {
+			input = parseInt(prompt("정수입력해주세요."));
+			sum += input;
+			res += input + " ";
+			yn = confirm("\n계속하시겠습니까?\n")
+			if (!yn) {
+				break;
+			}
+		}
+		result1 = document.getElementById('result1')
+		result1.innerHTML = res + "<br>";
+		result1.innerHTML += "총합 : " + sum;
+	}
+
+	function proc2() {
+		multi = 0;
+		res = "";
+		while (true) {
+			input = parseInt(prompt("단이 될 정수입력해주세요."));
+			res += input + "단 <br>";
+			for (var i = 1; i < 10; i++) {
+				multi = input * i;
+				res += input + " x " + i + " = " + multi + "<br>";
+			}
+			res += "<br>";
+			yn = confirm("\n계속하시겠습니까?\n")
+			if (!yn) {
+				break;
+			}
+		}
+		result2 = document.getElementById('result2')
+		result2.innerHTML = res;
+	}
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h3>누적합</h3>
+		confirm() 합<br> 실행중 사용자의 답변을 기다림<br>yes -true를 리턴<br>no
+		-false를 리턴<br> <br>prompt를 이용해서 입력하고 누적해서 결과를 출력<br>한번실행후
+		confirm()메소드를 이용하여<br>계속진행 여부를 판단 <br> <br> <input
+			type="button" value="누적더하기 confirm" onclick="proc1()"> <br>
+		<div id="result1"></div>
+	</div>
+
+	<div class="box">
+		<h3>구구단</h3>
+		confirm() 구구단<br> <br>yes -true를 리턴<br>no -false를 리턴<br>
+		<br> <input type="button" value="구구단 confirm" onclick="proc2()">
+		<br>
+		<div id="result2"></div>
+	</div>
+</body>
+</html>

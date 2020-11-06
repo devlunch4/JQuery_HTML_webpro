@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+div {
+	border: 1px solid red;
+	width: 100px;
+	height: 100px;
+	padding: 5px;
+}
+</style>
+<script type="text/javascript">
+	function proc1() {
+		su1 = parseInt(prompt("정수1를 입력하세요"));
+		su2 = parseInt(prompt("정수2를 입력하세요"));
+		oper = (prompt("+,-,*,/ 연산자 중  하나를 선택하세요"));
+
+		str = document.getElementById('result');
+		switch (oper) {
+		case "+":
+			res = su1 + su2;
+			alert(su1 + " + " + su2 + " = " + res);
+
+			break;
+		case "-":
+			res = su1 - su2;
+			alert(su1 + " - " + su2 + " = " + res);
+
+			break;
+		case "*":
+			res = su1 * su2;
+			alert(su1 + " * " + su2 + " = " + res);
+
+			break;
+		case "/":
+			res = su1 / su2;
+			alert(su1 + " / " + su2 + " = " + res);
+
+			break;
+		default:
+			alert("잘못된입력");
+			str.innerHTML = "잘못된입력";
+			break;
+		}
+		str2 = "수1 : " + su1 + "<br>"
+		str2 += "수2 : " + su2 + "<br>"
+		str2 += "연산자 : " + oper + "<br>"
+		str2 += su1 + " " + oper + " " + su2 + " = " + res + "<br>";
+
+		//str.innerHTML = str2;
+
+		//백틱 사용 !!! 작은따옴표 아님!!!
+		str3 = `결과 : ${su1} ${oper} ${su2} = ${res} `;
+		str.innerHTML = str3;
+
+	}
+</script>
+</head>
+<body>
+	<pre>
+확인버튼 클릭하면 preoc1()함수 호출
+두개의 수와 연산자 하나를 입력 받는다. prompt이용
+
+연산자의 종류에 따라서 각 연산을 수행한다.
+
+
+백틱, backquote, backtic, grave accent,
+템플릿 리터럴 : script에서 backtic(`)을 사용한 문자열을
+표현한 것을 템플릿 리터럴 이라고 한다.
+
+일반 문자열은 각 문자열("",'')과 변수사이를 (+)기호를 사용하여
+문자열을 구성한다. 
+'문자열 ${변수} 문자열 문자열 ${변수}'
+
+</pre>
+	<input type="button" value="연산확인" onclick="proc1()">
+	<br>
+	<br>
+	<div id="result"></div>
+</body>
+</html>

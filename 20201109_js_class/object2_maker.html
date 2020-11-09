@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public2.css">
+<style>
+</style>
+
+<script type="text/javascript">
+	function rect(name, width, height) {
+		this.name = name;
+		this.width = width;
+		this.height = height;
+
+		this.getArea = function() {
+			return this.width * this.height;
+		}
+		this.getCircum = function() {
+			return (this.width + this.height) * 2;
+		}
+		this.disp = function() {
+			res = "이름 : " + this.name + "<br>";
+			res += "가로 : " + this.width + "<br>";
+			res += "세로 : " + this.height + "<br>";
+			res += "면적 : " + this.getArea() + "<br>";
+			res += "둘레 : " + this.getCircum() + "<br>";
+
+			return res;
+		}
+	}
+
+	function proc1() {
+		r1 = new rect("네모1", 10, 10);
+		r2 = new rect("네모2", 20, 12);
+
+		document.getElementById('result1').innerHTML = r1.disp();
+		document.getElementById('result1').innerHTML += "<br>";
+		document.getElementById('result1').innerHTML += r2.disp();
+
+	}
+
+	//객체의 생성자 함수 -객체를 정의
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h3>객체생성자</h3>
+		내용<br> 확인<br> <input type="button" value="버튼1"
+			onclick="proc1()"> <br> <br>
+		<div id="result1"></div>
+	</div>
+</body>
+</html>

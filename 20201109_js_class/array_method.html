@@ -139,20 +139,29 @@
 
 		document.getElementById('result8').innerHTML = "오름차순 정렬 : " + nums;
 	}
-
 	function proc9() {
-
+		fruits = [ "사과", "딸기", "바나나", "사과", "수박", "참외", "사과" ];
+		res = "원래배열 : " + fruits + "<br>";
+		fruits.splice(3, 2);
+		res += "fruits.splice(3, 2) : " + fruits + "<br>";
+		document.getElementById('result9').innerHTML = res;
+	}
+	function proc10() {
+		fruits = [ "사과", "딸기", "바나나", "사과", "수박", "참외", "사과" ];
 		res = "원래배열 : " + fruits + "<br>";
 		fruits.splice(2, 1, "메론", "토마토");
 		//2번위치에서 1개를 지우고 메론과 토마토가 들어간다.
-		res += " fruits.splice(2, 1, \"메론\", \"토마토\") 수정배열 : " + fruits + "<br>";
-		document.getElementById('result9').innerHTML = res;
+		res += " fruits.splice(2, 1, \"메론\", \"토마토\") 수정배열 : " + fruits
+				+ "<br>";
+		document.getElementById('result10').innerHTML = res;
 	}
+
 	function proc11() {
-
-	}
-	function proc12() {
-
+		fruits = [ "사과", "딸기", "바나나", "사과", "수박", "참외", "사과" ];
+		res = "원래배열 : " + fruits + "<br>";
+		fruits.splice(4, 0, "복숭아");
+		res += 'fruits.splice(4, 0, "복숭아") : ' + fruits + "<br>";
+		document.getElementById('result11').innerHTML = res;
 	}
 </script>
 </head>
@@ -213,11 +222,11 @@
 	</div>
 
 
-	<div class="box">
+	<div class="box" style="width: 500px;">
 		<h3>Splice-수정(삭제/추가)</h3>
 
 		splice(index, n) - index 위치에서 n개를 삭제<br> splice(index, n, a,b,c)
-		- index위치에서 n개를 삭제하고 a,b,c를 추가<br> plice(index, 0, a,b,c)-
+		- index위치에서 n개를 삭제하고 a,b,c를 추가<br> splice(index, 0, a,b,c)-
 		index위치에서 삭제하지 않고 a,b,c를 추가<br>
 		<!--  -->
 		<input type="button" value="splice" onclick="proc9()">
@@ -225,9 +234,9 @@
 		<input type="button" value="splice2" onclick="proc10()">
 		<!--  -->
 		<input type="button" value="splice3" onclick="proc11()"> <br>
-		<div id="result9"></div>
-		<div id="result10"></div>
-		<div id="result11"></div>
+		<div id="result9" style="width: 450px"></div>
+		<div id="result10" style="width: 450px"></div>
+		<div id="result11" style="width: 450px"></div>
 	</div>
 </body>
 </html>

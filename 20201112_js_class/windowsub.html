@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+</style>
+<script type="text/javascript">
+	function proc1() {
+
+		namevalue = document.getElementById('name').value.trim();
+		//opener를 이용해 부모창에 출력
+		opener.document.getElementById('result1').innerHTML = namevalue;
+
+		//sub창에 출력 ==> 테스트용
+		document.getElementById('result1').innerHTML = namevalue;
+
+	}
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h3>Window Sub</h3>
+		windowsuper에 의해서 새롭게 열리는 자기창이다. <br> 자식창에서 부모창(windowsuper)을 참조하는
+		객체속성은 opener이다.<br> <br> <input type="button" value="버튼1"
+			onclick="proc1()"> <br> <br> 이름 : <input
+			type="text" id="name">
+		<div id="result1"></div>
+	</div>
+</body>
+</html>

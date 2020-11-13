@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public_location.css">
+<style>
+.box button {
+	width: 180px;
+}
+</style>
+<script type="text/javascript">
+	function proc1() {
+
+		res = "location.href :  " + location.href + "<br>";
+		res += "location.protocol :  " + location.protocol + "<br>";
+		res += "location.host :  " + location.host + "<br>";
+		res += "location.hostname  : " + location.hostname + "<br>";
+		res += "location.port :  " + location.port + "<br>";
+
+		document.getElementById('result1').innerHTML = res;
+	}
+
+	function proc2() {
+		location.href = 'test.jsp';
+	}
+
+	function goPage() {
+		location.href = 'test.jsp?code=2&name=이름몰라';
+	}
+
+	function replaceProc() {
+		location.replace('test.jsp');
+	}
+
+	function reloadProc() {
+		//문자 배열 생성
+		str = [ "1번문장", "2번문장", "3번문장", "4번문장", "5번문장" ];
+		rand = Math.floor(Math.random() * str.length);
+
+		res = "<h1>" + str[rand] + "</h1>";
+
+		document.getElementById('result2').innerHTML = res;
+		document.getElementById('result2').style.color = 'red';
+		
+		setTimeout(() => {location.reload();
+			
+		}, 1000);
+	}
+</script>
+</head>
+<body>
+	<div class="box" style="width: 800px">
+		<h3>location</h3>
+		url의 정보를 얻는다 <br> href : url전체 정보 <br> protocal : 인터넷규약 http
+		<br> host : hostname + port <br> hostname : server이름 <br>
+		port : 데이타의 출입구 <br> <input type="button" value="location 확인"
+			onclick="proc1()"> <br> <br>
+		<div id="result1"></div>
+	</div>
+
+
+	<div class="box">
+		<h3>Location2</h3>
+		<!-- 1버튼 -->
+		- 자동으로 특정페이지로 이동할때 사용 : location.href="페이지이름" <input type="button"
+			value="페이지 이동" onclick="proc2()"> <br> <br>
+
+		<!-- 2링크 -->
+		- a 태그에서 이용- 함수호출 : javascript:함수명() <a href="javascript:goPage()">
+			공지사항 목록 </a><br> <br>
+
+		<!-- 3버튼 -->
+		- 이벤트 서버전송(get) : location.href=페이지이름 <br>// 이벤트를 코드 노출 (링크에 값 포함
+		code=1&name=korea)
+		<button type="button"
+			onclick="location.href='test.jsp?code=1&name=korea'">이벤트 코드
+			전송</button>
+		<br> <br>
+
+		<!-- 4버튼 -->
+		- 새로운 문서로 대체 : location.replace(페이지이름); // 뒤로가기 불가
+		<button type="button" onclick="replaceProc()">새로운 문서로 대체</button>
+		<br> <br>
+
+		<!-- 5버튼 -->
+		- 현재 문서를 다시 리로드 : <br>
+		<!--  -->
+		result2 에 문자열을 배열로 생성하고 랜덤수 생성수 문자열을 선택한다.<br>
+		<!--  -->
+		선택된 문자열을 result2에 출력하고 1초후에 원래문서로 돌아온다.
+		<button type="button" onclick="reloadProc()">페이지 재호출</button>
+		<div id="result2"></div>
+	</div>
+</body>
+</html>

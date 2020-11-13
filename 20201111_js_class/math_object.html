@@ -7,29 +7,52 @@
 <style>
 </style>
 <script type="text/javascript">
+	rand = Math.floor(Math.random() * 100) + 1;
+	count = 0;
+	ins = "";
 
-rand = Math.random(0*100) +1;
-function proc1() {
-	
-	invalue = document.getElementById('in').value.trim();
-	if(invalue > rand){
-		
-		//수가 작습니다. 높습니다.
+	//커서가 'in'생성된후 커서가 자동으로 위치하게 한다.
+	window.onload = function() {
+		document.getElementById('in').focus();
 	}
-	
-	
-	
-}
+
+	//
+	//
+	function proc1() {
+		//	console.log('rand=' + rand + " invalue=" + invalue);
+		res = "";
+		count++;
+		invalue = document.getElementById('in').value.trim();
+		ins += invalue + " ";
+
+		if (invalue == rand) {
+			res = "랜덤 : " + rand + "<br>";
+			res += ins + "<br>";
+			res += count + " 번 입력해서 맞췄습니다";
+		} else if (invalue > rand) {
+			res += "입력 값이 큽니다. 작은 수를 입력해주세요"
+		} else if (invalue < rand) {
+			res += "입력 값이 작습니다. 큰 수를 입력해주세요"
+		}
+		
+		//입력값 리셋
+		invalue = document.getElementById('in').value = " ";
+		//커서의 위치 지속
+		invalue = document.getElementById('in').focus();
+		//출력
+		document.getElementById('result1').innerHTML = res;
+	}
 </script>
 </head>
 <body>
 
 	<div class="box">
 		<h3>Math / Number Guess</h3>
-		<p>
-			1부터 100사이의 숫자를 입력하세요<br>
-			<br> <input id="number" type="text"> <input
-				type="button" value="버튼1" onclick="proc1()"> <br> <br>
+		1부터 100사이의 숫자를 입력하세요<br> 랜덤수를 발생하여 맞추는 프로그램<br> 랜덤은1~100
+		Math.random()*100+1<br> 힌트와 count 구하기<br> <br>
+		<!--  -->
+		<input type="text" id="in"> <input type="button" value="랜덤값과 입력값 확인"
+			onclick="proc1()"> <br>
 		<div id="result1"></div>
 	</div>
 </body>

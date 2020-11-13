@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+img {
+	width: 100px;
+	height: auto;
+}
+</style>
+
+<script type="text/javascript">
+	function proc1() {
+		//해당초 지연후 시행
+		setTimeout(function() {
+			//result1 항목의 배경색 변경
+			document.getElementById('result1').style.background = "yellow"
+			//지정 숫자 초후 변경
+		}, 1000);
+	}
+
+	function proc2(but) {
+
+		//시작시 표시가 사라짐. 된다. 
+		but.style.display = "none";
+		//초경과할 때마다 반복
+		a = setInterval(
+				function() {
+					console.log(a);
+					//색상 랜덤
+					r = Math.floor(Math.random() * 256);
+					g = Math.floor(Math.random() * 256);
+					b = Math.floor(Math.random() * 256);
+					//rgb(123,256,123);
+					//rgb(12%,25%,13%);
+					//#adfad3;
+					//result1 항목의 배경색 변경
+
+					//document.getElementById('result2').style.background = `rgb(${r}, ${g}, ${b})`;
+
+					//위 값을 16진수로 표현
+					xr = r.toString(16);
+					xg = g.toString(16);
+					xb = b.toString(16);
+
+					document.getElementById('result2').style.background = `#${xr}${xg}${xb}`;
+					document.body.style.background = `#${xr}${xg}${xb}`;
+
+				}, 500);
+	}
+
+	function proc3(but) {
+		//종료버튼 메소드 실행시. 인터벌 종료 및 스타트 버튼 활성
+		clearInterval(a);
+		document.getElementById('start').style.display = "inline";
+	}
+
+	function proc4(thisa) {
+
+		thisa.style.display = "none";
+
+		imgs = [ "../images/스포츠.jpg", "../images/스포츠1.jpg",
+				"../images/스포츠2.jpg", "../images/스포츠3.jpg",
+				"../images/아메리카노.jpg", "../images/에스프레소..jpg" ]
+		// imgs[0~5]
+
+		//이미지 1초마다 변경
+
+		vimg = document.getElementsByTagName('img')[0];
+
+		b = setInterval(function() {
+			idx = Math.floor(Math.random() * imgs.length);
+			//imgs[idx]
+			//
+
+			vimg.src = imgs[idx];
+
+			start = imgs[idx].lastIndexOf("/") + 1;
+			end = imgs[idx].lastIndexOf(".");
+
+			vimg.alt = imgs[idx].slice(start, end)
+
+			//document.getElementById('result4').innerHTML = vimg;
+
+		}, 1000);
+
+	}
+
+	function proc5() {
+		//종료버튼 메소드 실행시. 인터벌 종료 및 스타트 버튼 활성
+		clearInterval(b);
+		document.getElementById('start2').style.display = "inline";
+	}
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h3>setTimeout</h3>
+		setTimeout(fn, millisec) : 지정된 millisec 시간이 경과후<br>fn함수를 한번 실행후
+		종료한다.<br> 버튼을 클릭하면 1초 후에 result1 의 배경색을 변경 한다<br> <input
+			type="button" value="setTimeout 버튼1" onclick="proc1()"> <br>
+		<br>
+		<div id="result1"></div>
+	</div>
+
+	<div class="box">
+		<h3>setInterval</h3>
+		setTimeout(fn, millisec) : 지정된 millisec 시간이 경과할때마다<br> fn함수를 매번
+		반복적으로 실행한다.<br> 버튼을 클릭하면 1초 경과마다 result1 의 배경색을 변경 한다<br>
+		<!-- proc2(this) 한번더 시 중지. -->
+		<input id="start" type="button" value="setInterval 시작"
+			onclick="proc2(this)">
+		<!--  -->
+		<input id="stop" type="button" value="setInterval 종료"
+			onclick="proc3(this)"> <br> <br>
+		<div id="result2"></div>
+	</div>
+
+	<div class="box">
+		<h3>setInterval2</h3>
+		setTimeout(fn, millisec) : 지정된 millisec 시간이 경과할때마다<br> fn함수를 매번
+		반복적으로 실행한다.<br> 버튼을 클릭하면 1초 경과마다 result4에 이미지를 출력한다.<br>
+		<!-- proc2(this) 한번더 시 중지. -->
+		<input id="start2" type="button" value="setInterval 시작"
+			onclick="proc4(this)">
+		<!--  -->
+		<input id="stop2" type="button" value="setInterval 종료"
+			onclick="proc5(this)"> <br> <br>
+		<div id="result4">
+			<img src="../images/사막.jpg" alt="사막">
+		</div>
+	</div>
+</body>
+</html>

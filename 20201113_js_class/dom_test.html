@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+.box3 {
+	border: green;
+	background: Crimson;
+	margin: 5px;
+	height: auto;
+	width: 500px;
+	padding: 10px;
+}
+</style>
+<script>
+	function ex1() {
+		var list = document.getElementsByTagName('ul')[0];
+		var allItems = list.getElementsByTagName('li');
+
+		for (var i = 0, length = allItems.length; i < length; i++) {
+			alert(allItems[i].firstChild.data);
+		}
+	}
+
+	function proc1() {
+		//ulist = document.getElementsByTagName('ul')[0];
+		// ==
+		//0번쨰 것 하나만 가져오는 쿼리 셀렉터
+		ulist = document.querySelector('ul');
+
+		listitem = ulist.getElementsByTagName('li');
+		res = "";
+
+		for (i = 0; i < listitem.length; i++) {
+			res += listitem[i].firstChild.data + "<br>";
+		}
+		document.getElementById('result1').innerHTML = res;
+	}
+
+	function proc2() {
+		//2번쨰 ul 구역 설정
+		ultag = document.getElementsByTagName('ul')[1];
+
+		//위 코드 대체 가능 코드 2줄
+		//ultag = document.getElementsBytagName('ul');
+		//ultag[1];
+
+		litag = ultag.querySelectorAll('li'); //5개
+		//litag = document.querySelectorAll('li'); //10개
+		console.log(litag.length);
+
+		for (i = 0; i < litag.length; i++) {
+			//fisrtChild ==> Objext Text가 생성 ==> data 가져오기
+			imgdata = litag[i].firstChild.data;
+
+			//이미지 생성 <img src="../images/이름.jpg" alt="">
+			vimg = document.createElement("img");
+			vimg.src = "../images/" + imgdata + ".jpg";
+			vimg.alt = imgdata;
+			vimg.width = 100;
+			vimg.height = 100;
+
+			//생성된 이미지를 div>> result2에 추가.
+			//즉 이미지는 자식이 되고 result2는 부모가 된다.
+			//litag 즉. li 위치에 vimg 가 추가된다.
+			litag[i].appendChild(vimg);
+		}
+	}
+
+	function proc3(litag) {
+		//실질적으론 해당 li 의 값을 받음.
+
+		//해당 인자값을 받음 litag.
+		//즉 클릭 받는 리스트의 텍스트.
+
+		// 클릭받은 텍스트 litag의 인자 값 설정 textdata
+		//실질적으론 해당 li 의 값을 받음.
+		textdata = litag.firstChild.data;
+
+		//해당 li에 img 생성.
+		vimg = document.createElement("img");
+		//해당 img에 src 주소값 설정
+		vimg.src = "../images/" + textdata + ".jpg";
+		//해당 img에 alt 주소값 설정
+		vimg.alt = textdata;
+		//해당 img에 가로세로 설정
+		vimg.width = 100;
+		vimg.height = 100;
+
+		//litag에 해당 vimg 추가가 되어 이미지가 표출된다
+		litag.appendChild(vimg);
+
+	}
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h3>Dom Test1</h3>
+		UL요소와 자식 요소에 접근해서 값을 가져온다<br> <br>
+		<!--  -->
+		<ul>
+			<li>List item 1</li>
+			<li>List item 2</li>
+			<li>List item 3</li>
+			<li>List item 4</li>
+			<li>List item 5</li>
+		</ul>
+		<!--  -->
+		<input type="button" value="버튼1" onclick="proc1()"> <br>
+		<br>
+		<div id="result1"></div>
+	</div>
+
+
+	<div class="box">
+		<h3>Dom Test2</h3>
+		UL요소와 자식 요소에 접근해서 값을 가져온다<br> 버튼을 클릭하면 이미지를 생성하여 출력 <br>
+		<!--  -->
+		<ul>
+			<li>뱅쇼</li>
+			<li>셔틀콕</li>
+			<li>소우주</li>
+			<li>딸기스무디</li>
+			<li>등대</li>
+		</ul>
+		<!--  -->
+		<input type="button" value="버튼2" onclick="proc2()"> <br>
+		<br>
+		<div id="result2"></div>
+	</div>
+
+
+	<div class="box3">
+		<h3>Dom Test3</h3>
+		UL요소와 자식 요소에 접근해서 값을 가져온다<br> 각 아이템(해당 li의 텍스트)을 클릭하면 이미지를 생성하여
+		출력<br>
+		<!--  -->
+		<ul>
+			<!--  해당 li 가 this 가 된다. 그 this 가 proc3의 메소드로 전송? 포함된다. -->
+			<li onclick="proc3(this)">뱅쇼</li>
+			<li onclick="proc3(this)">셔틀콕</li>
+			<li onclick="proc3(this)">소우주</li>
+			<li onclick="proc3(this)">딸기스무디</li>
+			<li onclick="proc3(this)">등대</li>
+		</ul>
+	</div>
+
+	<!-- 빈공간 -->
+	<div class="box"
+		style="background-color: yellow; height: 100px; margin: 5px;">빈공간</div>
+</body>
+</html>

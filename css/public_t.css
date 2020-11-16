@@ -1,0 +1,33 @@
+@charset ="UTF-8";
+
+pre{
+	 padding : 10px; 
+	 background : rgba(30%, 70%, 80%, 0.2);
+	 border-top : 2px solid blue;
+	 border-bottom : 5px double blue;
+	 font-size : 1.5em;
+}
+.box{
+	border : none;
+	background: #8080ff;
+	margin : 10px;
+	height : auto;
+	padding : 10px;
+}
+
+.box div {
+    border : 1px dotted orange;
+    height : auto;
+    padding : 10px;
+    margin : 5px;
+ }
+ .box input[type=button], .box button{
+    width : 80px;
+    background: yellow;
+    color : red;
+    padding : 5px 10px;
+    border-radius: 50px;
+    font-weight : bold;
+    margin-top : 20px;
+    margin-bottom: 20px; 
+ }

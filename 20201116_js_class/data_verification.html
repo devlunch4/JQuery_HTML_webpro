@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+</style>
+<script type="text/javascript">
+	//window.onload : 브라우저에 보일 떄 찾아서 호출해라
+	//window.onload = 
+
+	function proc1() {
+		ff = document.getElementById("ff");
+		// 위에꺼하거나 주석처리된것 하거나 ff= document.querySelector("#ff");
+
+		//오류 발생 원인 
+		//name = document.getElementById("name"); 값의 name인식의 오류와
+		//해당 값에 대한 정의 또는 불러오는데 오류가 있다.
+		//따라서 name 변수 지정 앞에 v를 추가해주었다.
+		
+		
+		vname = document.getElementById("name");
+		vaddr = document.getElementById("addr");
+		vbirthday = document.getElementById("birthday");
+		vuserid = document.getElementById("userid");
+		vemail = document.getElementById("email");
+		vphone = document.getElementById("phone");
+
+		//ff.onsubmit() {}
+
+		nvalue = vname.value.trim().length;
+		avalue = vaddr.value.trim().length;
+		bvalue = vbirthday.value.trim().length;
+		uvalue = vuserid.value.trim().length;
+		evalue = vemail.value.trim().length;
+		pvalue = vphone.value.trim().length;
+
+		//이름 공백 체크
+		if (nvalue < 1) {
+			alert("이름 입력");
+			return false;
+		}
+		//이름길이 2~4까지 한정
+		if (nvalue <2 || nvalue > 4){
+			alert("이름의 길이는 2~4 사이로 입력");
+			return false;
+		} 
+			
+		//정규식 체크
+		
+		//
+		if (avalue < 1) {
+			alert("주소 입력");
+			return false;
+		}
+		//
+		if (bvalue < 1) {
+			alert("생일 입력");
+			return false;
+		}
+		//
+		if (uvalue < 1) {
+			alert("아이디 입력");
+			return false;
+		}
+		//아이디 길이 6~8
+		if (uvalue <6 || nvalue > 8){
+			alert("아이디 길이는 6~8 사이로 입력");
+			return false;
+		} 
+		//
+		if (evalue < 1) {
+			alert("이메일 입력");
+			return false;
+		}
+		//
+		if (pvalue < 1) {
+			alert("전화 입력");
+			return false;
+		}
+		alert("성공");
+		//} ff.onsubmit() 마감
+	}
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h3>데이터길이/공백 검증</h3>
+		trim()<br> length<br> <br>
+		<h3>회원가입</h3>
+		<!-- onsubmit="return false  버튼을 눌르면 실행 되지 않는다.-->
+		<form id="ff" action="test.jsp" method="post" onsubmit="return false">
+			이름: <input type='text' id='name'><br>
+			<!--  -->
+			주소: <input type='text' id='addr'><br>
+			<!--  -->
+			생일: <input type='date' id='birthday'><br>
+			<!--  -->
+			아이디(6-8 문자): <input type='text' id='userid'><br>
+			<!--  -->
+			이메일: <input type='email' id='email'><br>
+			<!--  -->
+			휴대폰: <input type='tel' id='phone'><br>
+			<!--  -->
+			<input type='button' onclick="proc1()" value='확인'><br>
+		</form>
+
+	</div>
+</body>
+</html>

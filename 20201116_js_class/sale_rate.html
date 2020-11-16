@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public_t.css">
+<style>
+.box div { /* result1 */
+	height: 200px;
+	width: 660px;
+}
+
+.box .guess_box {
+	width: 150px;
+	height: 180px;
+	float: left;
+	margin: 3px;
+	padding: 3px;
+	background: pink;
+}
+
+img {
+	width: 100%;
+	height: 80%;
+}
+
+img:hover {
+	border: 2px solid green;
+}
+
+.pp {
+	background-color: yellow;
+	text-align: center;
+	position: relative;
+	bottom: 12px;
+}
+
+.pp2 {
+	background-color: white;
+	text-align: center;
+	position: relative;
+	bottom: 12px;
+}
+</style>
+<script type="text/javascript">
+	function proc1(vimg) {
+
+		//클래스 이름 찾기
+
+		//태그 유무에 따라서 객체 삭제
+		if (ptag != null) {
+			pp = document.getElementsByClassName("pp")[0];
+			guessBox = ptag.parentNode;
+			//ptag 부모요소 삭제
+			guessBox.removeChild(pp);
+		}
+
+		//랜덤 발생 수 5~10 
+		ran = Math.floor(Math.random() * 6 + 5);
+
+		//textNode 생성 - 할인율 : 10%
+		text = document.createTextNode("할인율 : " + ran + "%");
+
+		//p태그생성
+		ptag = document.createElement("p");
+		//p태그의 클래스 속성 생성
+		// 이것이 아님 ptag.class = "pp";
+		ptag.setAttribute("class", "pp");
+
+		//p태그에 text추가
+		ptag.appendChild(text);
+
+		//guess_box에 p 태그 추가
+		//img를 this 로 사용한다
+		//guess_box를 검색하기 위해서 img기준으로 부모요소를 검색한다.
+		vimg.parentNode.appendChild(ptag);
+
+	}
+
+	//////////////////////////////////////
+	ptag = null;
+	window.onload = function() {
+
+		vimgs = document.getElementsByClassName('cimg');
+		vimgs = document.querySelectorAll('.cimg');
+
+		for (i = 0; i < vimgs.length; i++) {
+			vimgs[i].addEventListener('click', proc2)
+		}
+	}
+	ptag2 = null;
+	////////////////////////////////////////
+
+	function proc2() {
+
+		//THIS 클래스 사용
+		//태그 유무에 따라서 객체 삭제
+
+		if (ptag2 != null) {
+			pp = document.getElementsByClassName("pp2")[0];
+			guessBox = pp.parentNode;
+			//ptag 의 부모요소 
+			guessBox.removeChild(pp);
+		}
+
+		//랜덤발생 5~10 
+		rand = Math.floor(Math.random() * 6 + 5);
+
+		//textNode생성 - 할인율 : 10%
+		text2 = document.createTextNode("할인율 : " + rand + "%");
+
+		//p태그생성 <p class="pp">할인율 10%</p>
+		ptag2 = document.createElement('p');
+		ptag2.setAttribute('class', 'pp2');
+
+		//p태그에 textNode 추가  
+		ptag2.appendChild(text2);
+
+		//guess_box p태그 추가 
+		//img를 this 로 사용한다 
+		//guess_box를 검색하기 위해서 img를 기준으로 부모요소를 검색한다
+		this.parentNode.appendChild(ptag2);
+
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>할인율1</h3>
+		&lt;img onclick="proc1(this)" src="" alt=""><br> 이미지를 클릭하면 p태그를
+		생성, <br>guess_box에 p태그를 추가 &lt;p class="pp">할인율 : 10%&lt;/p> <br>
+		<input type="button" value="확인" onclick="proc1()"> <br>
+		할인율은 5~10사이의 난수를 발생한다<br>
+		<div id="result1">
+			<div class="guess_box">
+				<img onclick="proc1(this)" src="../images/딸기스무디.jpg" alt="딸기스무디">
+			</div>
+			<div class="guess_box">
+				<img onclick="proc1(this)" src="../images/가구3.jpg" alt="가구3">
+			</div>
+			<div class="guess_box">
+				<img onclick="proc1(this)" src="../images/국화.jpg" alt="국화">
+			</div>
+			<div class="guess_box">
+				<img onclick="proc1(this)" src="../images/소우주.jpg" alt="소우주">
+			</div>
+		</div>
+		<br>
+	</div>
+
+	<div class="box">
+		<h3>할인율2</h3>
+		이미지를 클릭하면 p태그를 생성, <br>guess_box에 p태그를 추가 &lt;p class="pp">할인율 :
+		10%&lt;/p> <br> <input type="button" value="확인" onclick="proc1()">
+		<br> 할인율은 5~10사이의 난수를 발생한다 <br> 이벤트 일괄 처리<br> <br>
+		vimgs = document.getElementsByClassName('cimg');<br> vimgs =
+		document.querySelectorAll('.cimg');<br>
+		<!--  -->
+		<br> for(i = 0;i &lt; vimgs.length;
+		i++){vimgs[i].addEventListener('click',proc2)} <br> proc2 는 새로
+		정의하는 사용자 함수 <br> proc2 함수내에서 img를 this로 사용할수 있다. <br>
+
+		<div id="result2">
+			<div class="guess_box">
+				<img class="cimg" src="../images/딸기스무디.jpg" alt="딸기스무디">
+			</div>
+			<div class="guess_box">
+				<img class="cimg" src="../images/가구3.jpg" alt="가구3">
+			</div>
+			<div class="guess_box">
+				<img class="cimg" src="../images/국화.jpg" alt="국화">
+			</div>
+			<div class="guess_box">
+				<img class="cimg" src="../images/소우주.jpg" alt="소우주">
+			</div>
+		</div>
+		<br>
+	</div>
+
+</body>
+</html>

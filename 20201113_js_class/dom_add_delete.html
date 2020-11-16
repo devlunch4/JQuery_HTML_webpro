@@ -48,14 +48,23 @@
 		//p태그 생성
 		ptag = document.createElement("p");
 
-		//input태그 생성
+		//input태그 생성 <input type="button" value="삭제"
 		input = document.createElement("input")
 		input.type = "button";
 		input.value = "delete";
-		input.margin = "5";
+		//	input.margin= 10;
+		input.onclick = function() {
+			//현재 노드(BUTTON)의 부모노드를 반환
+			parentp = this.parentNode;
+
+			//parantp 는 result2의 자식
+			//result2에서 삭제
+			parentp.remove();
+		}
 
 		//text를 ptag에 추가한다
 		ptag.appendChild(text);
+		//input태그를 ptag에 추가한다
 		ptag.appendChild(input);
 
 		//result1에 ptag를 추가한다
@@ -86,8 +95,10 @@
 		createElement("p")<br> p태그의 자식요소로 textnode와 button요소를 추가한다<br>
 		<br> result2의 자식요소로 p태그를 추가한다 <br> <br> <br> <br>
 		삭제 : child = result1.lastChild<br> result1.removeChild(child);<br>
-		<br> <br> <input type="button" value="추가/삭제"
-			onclick="proc3()"> <br> <br>
+		<br> <br> 삭제 :<br> 자식요소.remove() : 부모요소에서 선택한 자식요소를
+		삭제한다. <br> <input type="button" value="추가/삭제" onclick="proc3()">
+		<br>
+		<br>
 		<div id="result2"></div>
 		<br>
 	</div>

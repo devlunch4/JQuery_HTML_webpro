@@ -6,27 +6,28 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../css/public_t.css">
 <style>
-.box div{  /* result1 */
-   height :  200px;
-   width : 660px;
-}
-.box .guess_box{
-   width :150px;
-   height : 150px;
-   float : left;
-   margin : 3px;
-   padding : 3px;
-   background : #d5b7c9;
-}
-img{
-   width : 100%;
-   height : 80%;
+.box div { /* result1 */
+	height: 200px;
+	width: 660px;
 }
 
+.box .guess_box {
+	width: 150px;
+	height: 150px;
+	float: left;
+	margin: 3px;
+	padding: 3px;
+	background: #d5b7c9;
+}
+
+img {
+	width: 100%;
+	height: 80%;
+}
 </style>
 
 <script>
-ptag = null;
+
 
 window.onload = function(){
 	
@@ -104,50 +105,55 @@ function proc2(){
 </head>
 <body>
 
-<div class="box">
-  <h3>할인율</h3>
-  &lt;img onclick="proc1(this)" src="" alt=""><br>
-    이미지를 클릭하면  p태그를 생성,  guess_box에 p태그를 추가 <br>
-      &lt;p class="pp">할인율 : 10%&lt;/p>  <br>
-    할인율 은 5~10사이의 난수를 발생한다 <br>
-   
-  <br>
-  <div id="result1">
-     <div class="guess_box"> <img onclick="proc1(this)" src="../images/딸기스무디.jpg" alt="딸기스무디"></div>
-     <div class="guess_box"> <img onclick="proc1(this)" src="../images/가구3.jpg" alt="가구3"></div>
-     <div class="guess_box"> <img onclick="proc1(this)" src="../images/국화.jpg" alt="국화"></div>
-     <div class="guess_box"> <img onclick="proc1(this)" src="../images/소우주.jpg" alt="소우주"></div>
-  </div>
-  <br>
- </div>
- 
- 
- <div class="box">
-  <h3>할인율</h3>
-      이미지를 클릭하면  p태그를 생성,  guess_box에 p태그를 추가 <br>
-      &lt;p class="pp">할인율 : 10%&lt;/p>  <br>
-     할인율 은 5~10사이의 난수를 발생한다 <br>
-   
-   이벤트 일괄처리 <br>
-   vimgs = document.getElementsByClassName('cimg');<br>
-   vimgs = document.querySelectorAll('.cimg');<br>
-   
-   for(i=0; i&lt;vimgs.length; i++){<br>
-      vimgs[i].addEventListener('click', proc2)<br>
-   }<br>
-   proc2 는 새로 정의하는 사용자 함수 <br>
-   proc2 함수내에서 img를 this로 사용할 수 있다 <br>
-  
-  <br>
-  <div id="result2">
-     <div class="guess_box"> <img class="cimg" src="../images/딸기스무디.jpg" alt="딸기스무디"></div>
-     <div class="guess_box"> <img class="cimg" src="../images/가구3.jpg" alt="가구3"></div>
-     <div class="guess_box"> <img class="cimg" src="../images/국화.jpg" alt="국화"></div>
-     <div class="guess_box"> <img class="cimg" src="../images/소우주.jpg" alt="소우주"></div>
-  </div>
-  <br>
- </div>
- 
- 
+	<div class="box">
+		<h3>할인율</h3>
+		&lt;img onclick="proc1(this)" src="" alt=""><br> 이미지를 클릭하면 p태그를
+		생성, guess_box에 p태그를 추가 <br> &lt;p class="pp">할인율 : 10%&lt;/p> <br>
+		할인율 은 5~10사이의 난수를 발생한다 <br> <br>
+		<div id="result1">
+			<div class="guess_box">
+				<img onclick="proc1(this)" src="../images/딸기스무디.jpg" alt="딸기스무디">
+			</div>
+			<div class="guess_box">
+				<img onclick="proc1(this)" src="../images/가구3.jpg" alt="가구3">
+			</div>
+			<div class="guess_box">
+				<img onclick="proc1(this)" src="../images/국화.jpg" alt="국화">
+			</div>
+			<div class="guess_box">
+				<img onclick="proc1(this)" src="../images/소우주.jpg" alt="소우주">
+			</div>
+		</div>
+		<br>
+	</div>
+
+
+	<div class="box">
+		<h3>할인율</h3>
+		이미지를 클릭하면 p태그를 생성, guess_box에 p태그를 추가 <br> &lt;p class="pp">할인율 :
+		10%&lt;/p> <br> 할인율 은 5~10사이의 난수를 발생한다 <br> 이벤트 일괄처리 <br>
+		vimgs = document.getElementsByClassName('cimg');<br> vimgs =
+		document.querySelectorAll('.cimg');<br> for(i=0;
+		i&lt;vimgs.length; i++){<br> vimgs[i].addEventListener('click',
+		proc2)<br> }<br> proc2 는 새로 정의하는 사용자 함수 <br> proc2
+		함수내에서 img를 this로 사용할 수 있다 <br> <br>
+		<div id="result2">
+			<div class="guess_box">
+				<img class="cimg" src="../images/딸기스무디.jpg" alt="딸기스무디">
+			</div>
+			<div class="guess_box">
+				<img class="cimg" src="../images/가구3.jpg" alt="가구3">
+			</div>
+			<div class="guess_box">
+				<img class="cimg" src="../images/국화.jpg" alt="국화">
+			</div>
+			<div class="guess_box">
+				<img class="cimg" src="../images/소우주.jpg" alt="소우주">
+			</div>
+		</div>
+		<br>
+	</div>
+
+
 </body>
 </html>
